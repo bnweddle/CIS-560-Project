@@ -1,0 +1,77 @@
+﻿DROP TABLE IF EXISTS Libraries.ItemsOut
+DROP TABLE IF EXISTS Libraries.Book
+DROP TABLE IF EXISTS Libraries.Title
+DROP TABLE IF EXISTS Libraries.Author
+DROP TABLE IF EXISTS Libraries.Member
+DROP TABLE IF EXISTS Libraries.[Library]
+
+CREATE TABLE Libraries.[Library]
+(
+	LibraryID INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+	[Name] NVARCHAR(256) NOT NULL UNIQUE,
+	City NVARCHAR(64) NOT NULL,
+	[State] NVARCHAR(64) NOT NULL
+)
+
+CREATE TABLE Libraries.Member
+(
+	MemberID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	LibraryID INT NOT NULL REFERENCES Libraries.Library(LibraryID),
+	FirstName NVARCHAR(32) NOT NULL,
+	LastName NVARCHAR(32) NOT NULL,
+	Email NVARCHAR(128) NOT NULL,
+	Phone NVARCHAR(64) NOT NULL,
+
+	UNIQUE(MemberID, Email),
+	UNIQUE(LibraryID, MemberID)
+)
+
+CREATE TABLE Libraries.Author 
+(
+	AuthorID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	FirstName NVARCHAR(255) NOT NULL,
+	MiddleName NVARCHAR(255) NOT NULL,
+	LastName NVARCHAR(255) NOT NULL,
+	FullName NVARCHAR(255) NOT NULL,
+
+	UNIQUE(FirstName,MiddleName,LastName),
+
+	UNIQUE(FullName)
+)
+
+CREATE TABLE Libraries.Title
+(
+	TitleID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	ISBN NVARCHAR(13) NOT NULL CONSTRAINT UK_Libraries_Title_ISBN UNIQUE NONCLUSTERED,
+	AuthorID INT NOT NULL FOREIGN KEY REFERENCES Libraries.Author(AuthorID),
+	[Name] NVARCHAR(265) NOT NULL,
+	PublicationYear SMALLINT NOT NULL
+)
+
+CREATE TABLE Libraries.Book
+(
+	BookID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	LibraryID INT NOT NULL REFERENCES Libraries.Library(LibraryID),
+	TitleID INT NOT NULL FOREIGN KEY REFERENCES Libraries.Title(TitleID),
+	Quantity INT NOT NULL,
+
+	UNIQUE(LibraryID, BookID),
+	UNIQUE(LibraryID,TitleID)
+)
+
+CREATE TABLE Libraries.ItemsOut
+(
+	ItemsOutID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	BookID INT NOT NULL REFERENCES Libraries.Book(BookID),
+	LibraryID INT NOT NULL,
+	MemberID INT NOT NULL,
+	CheckedOutDate DATETIME NOT NULL,
+	DueBackDate DATETIME NOT NULL,
+	ReturnedDate DATETIME NULL,
+	
+	FOREIGN KEY(LibraryID, MemberID)
+	REFERENCES Libraries.Member(LibraryID, MemberID),
+
+	FOREIGN KEY(LibraryID, BookID)
+	REFERENCES Libraries.Book(LibraryID, BookID)
+)

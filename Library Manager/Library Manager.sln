@@ -9,12 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{B5AE5264-911
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{B7480168-41A0-4FF7-A420-54861BF4E088}"
 	ProjectSection(SolutionItems) = preProject
+		Author.sql = Author.sql
+		Book.sql = Book.sql
 		DropTables.sql = DropTables.sql
-		Library.Library.sql = Library.Library.sql
+		ItemsOut.sql = ItemsOut.sql
+		Library.sql = Library.sql
 		Member.sql = Member.sql
+		Title.sql = Title.sql
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shemas", "Shemas", "{4ABF83C0-6E72-4C96-8E3F-00D3EB7E7CD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E673D489-E0B6-4093-90C8-86701F8E404D}"
 EndProject
@@ -36,7 +38,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B7480168-41A0-4FF7-A420-54861BF4E088} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
-		{4ABF83C0-6E72-4C96-8E3F-00D3EB7E7CD9} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
 		{E673D489-E0B6-4093-90C8-86701F8E404D} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
 		{D2A5FFA2-8961-4D73-9BAC-B2A855C89D90} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
 	EndGlobalSection
