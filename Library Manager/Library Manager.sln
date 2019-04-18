@@ -19,6 +19,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{B74801
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E673D489-E0B6-4093-90C8-86701F8E404D}"
+	ProjectSection(SolutionItems) = preProject
+		AuthorValues.sql = AuthorValues.sql
+		BookValues.sql = BookValues.sql
+		ItemsOutValues.sql = ItemsOutValues.sql
+		LibraryValues.sql = LibraryValues.sql
+		MemberValues.sql = MemberValues.sql
+		TempBooks.sql = TempBooks.sql
+		TitleValues.sql = TitleValues.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Procedures", "Procedures", "{D2A5FFA2-8961-4D73-9BAC-B2A855C89D90}"
 EndProject
