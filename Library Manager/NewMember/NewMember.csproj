@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{89AB866A-286A-437D-A303-A9DE5A86F8F7}</ProjectGuid>
+    <ProjectGuid>{33277674-9573-4D17-A2CB-C487183F785A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Library_Manager</RootNamespace>
-    <AssemblyName>Library Manager</AssemblyName>
+    <RootNamespace>NewMember</RootNamespace>
+    <AssemblyName>NewMember</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,26 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewMember.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewMember.Designer.cs">
-      <DependentUpon>NewMember.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="SignIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SignIn.Designer.cs">
-      <DependentUpon>SignIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NewMember.resx">
-      <DependentUpon>NewMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SignIn.resx">
-      <DependentUpon>SignIn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

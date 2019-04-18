@@ -1,4 +1,4 @@
-﻿namespace Library_Manager
+﻿namespace NewMember
 {
     partial class Form1
     {
