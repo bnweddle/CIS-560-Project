@@ -30,6 +30,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E673D489-E
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Procedures", "Procedures", "{D2A5FFA2-8961-4D73-9BAC-B2A855C89D90}"
+	ProjectSection(SolutionItems) = preProject
+		CreateCheckOut.sql = CreateCheckOut.sql
+		CreateMember.sql = CreateMember.sql
+		GetMemberEmail.sql = GetMemberEmail.sql
+		RetrieveBooksByAuthor.sql = RetrieveBooksByAuthor.sql
+		RetrieveBooksByTitle.sql = RetrieveBooksByTitle.sql
+		RetrieveCheckedOutBooks.sql = RetrieveCheckedOutBooks.sql
+		RetrieveLibraries.sql = RetrieveLibraries.sql
+		RetrieveMostPopularBooks.sql = RetrieveMostPopularBooks.sql
+		RetrieveOverDueBooks.sql = RetrieveOverDueBooks.sql
+		RetrieveTopTenAuthors.sql = RetrieveTopTenAuthors.sql
+		UpdateReturnDate.sql = UpdateReturnDate.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
