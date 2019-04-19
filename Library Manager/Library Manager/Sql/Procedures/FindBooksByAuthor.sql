@@ -1,7 +1,9 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.FindBooksByAuthor
-	@AuthorID INT
+	@AuthorNamePattern NVARCHAR(255)
+	--DataDelegate "%" + AuthorNamePattern + "%"
 AS
+
 SELECT T.TitleID, T.ISBN, T.[Name], A.FullName, T.PublicationYear
-FROM Libraries.Titles T
-	INNER JOIN Libraries.Author A ON A.AuthorID = T.AuthorID
-		AND T.AuthorID = @AuthorID
+FROM Libraries.Author A
+	INNER JOIN Libraries.Title T ON T.AuthorID = A.AuthorID
+		AND (A.FullName LIKE @AuthorNamePattern)

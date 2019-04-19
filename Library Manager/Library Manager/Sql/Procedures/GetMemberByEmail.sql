@@ -1,8 +1,8 @@
-﻿CREATE OR ALTER PROCEDURE Libraries.GetMemberEmail
+﻿CREATE OR ALTER PROCEDURE Libraries.GetMemberForEmail
    @Email NVARCHAR(128)
 AS
 
-SELECT M.Email
+SELECT M.MemberID
 FROM Libraries.Member M
 WHERE M.Email = @Email;
 GO

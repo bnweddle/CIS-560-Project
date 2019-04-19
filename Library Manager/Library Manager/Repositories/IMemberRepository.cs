@@ -9,6 +9,8 @@ namespace Library_Manager.Repositories
 {
     public interface IMemberRepository
     {
-        Member CreateMember();
+        Member GetMemberbyEmail(string email);
+
+        Member CreateMember(int libraryId, string firstName, string lastName, string email, string phone);
     }
 }

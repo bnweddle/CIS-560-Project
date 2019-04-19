@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,7 @@
     <Compile Include="DataAccess\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
+    <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Library.cs" />
     <Compile Include="Library.cs">
       <SubType>Form</SubType>
@@ -72,7 +74,9 @@
       <DependentUpon>NewMember.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Repositories\IAuthorRepository.cs" />
     <Compile Include="Repositories\IMemberRepository.cs" />
+    <Compile Include="Repositories\ITitleRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,12 +141,13 @@
     <Content Include="Sql\Procedures\CreateMember.sql" />
     <Content Include="Sql\Procedures\FindBooksByAuthor.sql" />
     <Content Include="Sql\Procedures\FindBooksByTitle.sql" />
-    <Content Include="Sql\Procedures\GetMemberEmail.sql" />
-    <Content Include="Sql\Procedures\RetrieveCheckedOutBooks.sql" />
+    <Content Include="Sql\Procedures\GetMemberByEmail.sql" />
+    <Content Include="Sql\Procedures\ReportNumberOfBooks.sql" />
+    <Content Include="Sql\Procedures\RetrieveCheckedOutBooksForMember.sql" />
     <Content Include="Sql\Procedures\RetrieveLibraries.sql" />
-    <Content Include="Sql\Procedures\RetrieveMostPopularBooks.sql" />
-    <Content Include="Sql\Procedures\RetrieveOverDueBooks.sql" />
-    <Content Include="Sql\Procedures\RetrieveTopTenAuthors.sql" />
+    <Content Include="Sql\Procedures\ReportMostPopularBooks.sql" />
+    <Content Include="Sql\Procedures\ReportOverDueBooks.sql" />
+    <Content Include="Sql\Procedures\ReportTopTenAuthors.sql" />
     <Content Include="Sql\Procedures\UpdateReturnDate.sql" />
     <Content Include="Sql\Tables\Author.sql" />
     <Content Include="Sql\Tables\Book.sql" />
@@ -150,6 +155,7 @@
     <Content Include="Sql\Tables\ItemsOut.sql" />
     <Content Include="Sql\Tables\Library.sql" />
     <Content Include="Sql\Tables\Member.sql" />
+    <Content Include="Sql\Tables\Schema.sql" />
     <Content Include="Sql\Tables\Title.sql" />
   </ItemGroup>
   <ItemGroup>
