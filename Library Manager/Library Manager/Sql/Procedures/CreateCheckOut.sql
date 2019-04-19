@@ -1,14 +1,19 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.CheckOut
    @ItemsOutID INT OUTPUT,
+   @CheckedOutDate DATETIME OUTPUT,
+   @DueBackDate DATETIME OUTPUT,
+   @ReturnedDate DATETIME OUTPUT,
    @BookID INT,
    @MemberID INT,
    @LibraryID INT
 AS
 
 INSERT Libraries.ItemsOut(BookID, MemberID, LibraryID, CheckedOutDate, DueBackDate, ReturnedDate)
-VALUES(@BookID, @MemberID, @LibraryID, GETDATE(), DATEADD(DAY, 21, GETDATE()), NULL)
+VALUES(@BookID, @MemberID, @LibraryID, @CheckedOutDate, @DueBackDate, @ReturnedDate)
 
 SET @ItemsOutID = SCOPE_IDENTITY();
-
+SET @CheckedOutDate = GETDATE();
+SET @DueBackDate = DATEADD(DAY, 21, GETDATE())
+SET @ReturnedDate = NULL
 
 /*Member checks out a specific book(s) from specific library */

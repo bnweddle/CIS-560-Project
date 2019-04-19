@@ -8,13 +8,17 @@ namespace Library_Manager.DataDelegates
 {
     public class CreateCheckOutDataDelegate : NonQueryDataDelegate<ItemsOut>
     {
-        int ItemsOutID { get; } //Primary Key
-        int LibraryID { get; } //Foreign Key
-        int MemberID { get; } //Foreign Key
-        int BookID { get; } //Foreign Key
-        DateTime CheckedOutDate { get; }
-        DateTime DueDate { get; }
-        DateTime ReturnedDate { get; }
+        int LibraryID { get; }
+        int MemberID { get; } 
+        int BookID { get; } 
+
+        public CreateCheckOutDataDelegate(int bookID, int memberID, int libraryID)
+         : base("Libraries.CreateCheckOut")
+        {
+            LibraryID = libraryID;
+            MemberID = memberID;
+            BookID = bookID;
+        }
 
         public override void PrepareCommand(SqlCommand command)
         {
@@ -31,12 +35,23 @@ namespace Library_Manager.DataDelegates
 
             p = command.Parameters.Add("ItemsOutID", SqlDbType.Int);
             p.Direction = ParameterDirection.Output;
+
+            p = command.Parameters.Add("CheckedOutDate", SqlDbType.DateTime);
+            p.Direction = ParameterDirection.Output;
+
+            p = command.Parameters.Add("DueBackDate", SqlDbType.DateTime);
+            p.Direction = ParameterDirection.Output;
+
+            p = command.Parameters.Add("ReturnedDate", SqlDbType.DateTime);
+            p.Direction = ParameterDirection.Output;
         }
 
         public override ItemsOut Translate(SqlCommand command)
         {
             return new ItemsOut((int)command.Parameters["ItemsOutID"].Value, LibraryID, MemberID,
-                BookID, CheckedOutDate, DueDate, ReturnedDate);
+                BookID, (DateTime)command.Parameters["CheckedOutDate"].Value, 
+                (DateTime)command.Parameters["DueBackDate"].Value, 
+                (DateTime)command.Parameters["ReturnedDate"].Value);
         }
     }
 }

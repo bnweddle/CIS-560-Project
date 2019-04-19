@@ -18,15 +18,15 @@ namespace Library_Manager.Repositories
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public List<ItemsOut> CheckedOutBooksForMember(int memberID)
-        {
-            var d = new CheckedOutBooksForMemberDelegate(memberID);
-            return executor.ExecuteReader(d);
-        }
-
         public ItemsOut CreateCheckOut(int bookID, int memberID, int libraryID)
         {
             var d = new CreateCheckOutDataDelegate(bookID, memberID, libraryID);
+            return executor.ExecuteReader(d);
+        }
+
+        public List<ItemsOut> CheckedOutBooksForMember(int memberID)
+        {
+            var d = new CheckedOutBooksForMemberDelegate(memberID);
             return executor.ExecuteReader(d);
         }
 

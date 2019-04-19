@@ -4,7 +4,7 @@ namespace DataAccess
 {
    public abstract class NonQueryDataDelegate<T> : DataDelegate, INonQueryDataDelegate<T>
    {
-      protected NonQueryDataDelegate(string procedureName)
+      public NonQueryDataDelegate(string procedureName)
          : base(procedureName)
       {
       }
