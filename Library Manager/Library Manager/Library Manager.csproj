@@ -59,6 +59,8 @@
     <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="Models\Author.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\ItemsOut.cs" />
     <Compile Include="Models\Library.cs" />
     <Compile Include="Library.cs">
       <SubType>Form</SubType>
@@ -67,6 +69,7 @@
       <DependentUpon>Library.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\Title.cs" />
     <Compile Include="NewMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +78,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\IAuthorRepository.cs" />
+    <Compile Include="Repositories\IItemsOutRepository.cs" />
     <Compile Include="Repositories\IMemberRepository.cs" />
     <Compile Include="Repositories\ITitleRepository.cs" />
     <Compile Include="SignIn.cs">
@@ -144,7 +148,7 @@
     <Content Include="Sql\Procedures\GetMemberByEmail.sql" />
     <Content Include="Sql\Procedures\ReportNumberOfBooks.sql" />
     <Content Include="Sql\Procedures\RetrieveCheckedOutBooksForMember.sql" />
-    <Content Include="Sql\Procedures\RetrieveLibraries.sql" />
+    <Content Include="Sql\Procedures\RetrieveLibraryByName.sql" />
     <Content Include="Sql\Procedures\ReportMostPopularBooks.sql" />
     <Content Include="Sql\Procedures\ReportOverDueBooks.sql" />
     <Content Include="Sql\Procedures\ReportTopTenAuthors.sql" />

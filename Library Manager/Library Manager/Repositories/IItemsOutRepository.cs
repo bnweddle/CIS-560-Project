@@ -7,8 +7,10 @@ using Library_Manager.Models;
 
 namespace Library_Manager.Repositories
 {
-    interface IAuthorRepository
+    interface IItemsOutRepository
     {
-        IReadOnlyList<Title> FindBooksByAuthor(string authorName);
+        ItemsOut CreateCheckOut(int bookID, int memberID, int libraryID);
+
+        List<ItemsOut> CheckedOutBooksForMember(int memberID);
     }
 }
