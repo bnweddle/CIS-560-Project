@@ -1,0 +1,12 @@
+﻿CREATE TABLE Libraries.Author 
+(
+	AuthorID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	FirstName NVARCHAR(255) NOT NULL,
+	MiddleName NVARCHAR(255) NOT NULL,
+	LastName NVARCHAR(255) NOT NULL,
+	FullName NVARCHAR(255) NOT NULL,
+
+	UNIQUE(FirstName,MiddleName,LastName),
+
+	UNIQUE(FullName)
+)

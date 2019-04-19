@@ -5,45 +5,6 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Manager", "Library Manager\Library Manager.csproj", "{89AB866A-286A-437D-A303-A9DE5A86F8F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{B5AE5264-9114-4F86-A548-42B51AF48F97}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{B7480168-41A0-4FF7-A420-54861BF4E088}"
-	ProjectSection(SolutionItems) = preProject
-		Author.sql = Author.sql
-		Book.sql = Book.sql
-		DropTables.sql = DropTables.sql
-		ItemsOut.sql = ItemsOut.sql
-		Library.sql = Library.sql
-		Member.sql = Member.sql
-		Title.sql = Title.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{E673D489-E0B6-4093-90C8-86701F8E404D}"
-	ProjectSection(SolutionItems) = preProject
-		AuthorValues.sql = AuthorValues.sql
-		BookValues.sql = BookValues.sql
-		ItemsOutValues.sql = ItemsOutValues.sql
-		LibraryValues.sql = LibraryValues.sql
-		MemberValues.sql = MemberValues.sql
-		TempBooks.sql = TempBooks.sql
-		TitleValues.sql = TitleValues.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Procedures", "Procedures", "{D2A5FFA2-8961-4D73-9BAC-B2A855C89D90}"
-	ProjectSection(SolutionItems) = preProject
-		CreateCheckOut.sql = CreateCheckOut.sql
-		CreateMember.sql = CreateMember.sql
-		FindBooksByAuthor.sql = FindBooksByAuthor.sql
-		FindBooksByTitle.sql = FindBooksByTitle.sql
-		GetMemberEmail.sql = GetMemberEmail.sql
-		RetrieveCheckedOutBooks.sql = RetrieveCheckedOutBooks.sql
-		RetrieveLibraries.sql = RetrieveLibraries.sql
-		RetrieveMostPopularBooks.sql = RetrieveMostPopularBooks.sql
-		RetrieveOverDueBooks.sql = RetrieveOverDueBooks.sql
-		RetrieveTopTenAuthors.sql = RetrieveTopTenAuthors.sql
-		UpdateReturnDate.sql = UpdateReturnDate.sql
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,11 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{B7480168-41A0-4FF7-A420-54861BF4E088} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
-		{E673D489-E0B6-4093-90C8-86701F8E404D} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
-		{D2A5FFA2-8961-4D73-9BAC-B2A855C89D90} = {B5AE5264-9114-4F86-A548-42B51AF48F97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E4D6642-B821-4B73-ADB1-3E29939EFCB6}

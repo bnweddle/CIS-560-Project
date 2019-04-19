@@ -1,0 +1,12 @@
+﻿CREATE TABLE Libraries.Member
+(
+	MemberID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	LibraryID INT NOT NULL REFERENCES Libraries.Library(LibraryID),
+	FirstName NVARCHAR(32) NOT NULL,
+	LastName NVARCHAR(32) NOT NULL,
+	Email NVARCHAR(128) NOT NULL,
+	Phone NVARCHAR(64) NOT NULL,
+
+	UNIQUE(MemberID, Email),
+	UNIQUE(LibraryID, MemberID)
+)

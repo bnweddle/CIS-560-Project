@@ -8,6 +8,7 @@ namespace Library_Manager.Models
 {
     public class Member
     {
+        int LibraryID { get; set; }
         int MemberID { get; }
         string FirstName { get; set; }
         string LastName { get; set; }

@@ -46,6 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\DataDelegate.cs" />
+    <Compile Include="DataAccess\DataReaderDelegate.cs" />
+    <Compile Include="DataAccess\IDataDelegate.cs" />
+    <Compile Include="DataAccess\IDataReaderDelegate.cs" />
+    <Compile Include="DataAccess\INonQueryDataDelegate.cs" />
+    <Compile Include="DataAccess\NonQueryDataDelegate.cs" />
+    <Compile Include="DataAccess\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="DataAccess\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="DataAccess\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
+    <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="Models\Library.cs" />
     <Compile Include="Library.cs">
       <SubType>Form</SubType>
@@ -62,6 +73,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\IItemsOutRepository.cs" />
+    <Compile Include="Repositories\IMemberRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataAccess\.vs\DataAccess\v15\.suo" />
+    <None Include="DataAccess\.vs\DataAccess\v15\Server\sqlite3\db.lock" />
+    <None Include="DataAccess\.vs\DataAccess\v15\Server\sqlite3\storage.ide" />
+    <None Include="DataAccess\.vs\DataAccess\v15\Server\sqlite3\storage.ide-shm" />
+    <None Include="DataAccess\.vs\DataAccess\v15\Server\sqlite3\storage.ide-wal" />
+    <None Include="DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache" />
+    <None Include="DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache" />
+    <None Include="DataAccess\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +120,41 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DataAccess\bin\Debug\DataAccess.dll" />
+    <Content Include="DataAccess\bin\Debug\DataAccess.pdb" />
+    <Content Include="DataAccess\DataAccess.csproj" />
+    <Content Include="DataAccess\obj\Debug\DataAccess.csproj.FileListAbsolute.txt" />
+    <Content Include="DataAccess\obj\Debug\DataAccess.dll" />
+    <Content Include="DataAccess\obj\Debug\DataAccess.pdb" />
+    <Content Include="Sql\Data\AuthorValues.sql" />
+    <Content Include="Sql\Data\BookValues.sql" />
+    <Content Include="Sql\Data\ItemsOutValues.sql" />
+    <Content Include="Sql\Data\LibraryValues.sql" />
+    <Content Include="Sql\Data\MemberValues.sql" />
+    <Content Include="Sql\Data\TempBooks.sql" />
+    <Content Include="Sql\Data\TitleValues.sql" />
+    <Content Include="Sql\Procedures\CreateCheckOut.sql" />
+    <Content Include="Sql\Procedures\CreateMember.sql" />
+    <Content Include="Sql\Procedures\FindBooksByAuthor.sql" />
+    <Content Include="Sql\Procedures\FindBooksByTitle.sql" />
+    <Content Include="Sql\Procedures\GetMemberEmail.sql" />
+    <Content Include="Sql\Procedures\RetrieveCheckedOutBooks.sql" />
+    <Content Include="Sql\Procedures\RetrieveLibraries.sql" />
+    <Content Include="Sql\Procedures\RetrieveMostPopularBooks.sql" />
+    <Content Include="Sql\Procedures\RetrieveOverDueBooks.sql" />
+    <Content Include="Sql\Procedures\RetrieveTopTenAuthors.sql" />
+    <Content Include="Sql\Procedures\UpdateReturnDate.sql" />
+    <Content Include="Sql\Tables\Author.sql" />
+    <Content Include="Sql\Tables\Book.sql" />
+    <Content Include="Sql\Tables\DropTables.sql" />
+    <Content Include="Sql\Tables\ItemsOut.sql" />
+    <Content Include="Sql\Tables\Library.sql" />
+    <Content Include="Sql\Tables\Member.sql" />
+    <Content Include="Sql\Tables\Title.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\obj\Debug\TempPE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
