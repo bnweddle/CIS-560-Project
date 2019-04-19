@@ -58,6 +58,7 @@
     <Compile Include="DataAccess\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="DataAccess\Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
+    <Compile Include="DataDelegates\CreateCheckOutDataDelegate.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ItemsOut.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Repositories\IItemsOutRepository.cs" />
     <Compile Include="Repositories\IMemberRepository.cs" />
     <Compile Include="Repositories\ITitleRepository.cs" />
+    <Compile Include="Repositories\SqlItemsOutRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>

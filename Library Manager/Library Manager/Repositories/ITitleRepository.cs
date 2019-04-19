@@ -9,6 +9,14 @@ namespace Library_Manager.Repositories
 {
     interface ITitleRepository
     {
-        IReadOnlyList<Title> FindBooksByTitle(string titleName);
+        List<Title> FindBooksByTitle(string titleName);
+
+        IReadOnlyList<Title> MostPopularBooks();
+
+        IReadOnlyList<Title> NumberOfBooks();
+
+        List<Title> CheckedOutBooksForMember(int memberId);
+
+        void UpdateReturnDate(int itemOutId);
     }
 }
