@@ -72,7 +72,6 @@
       <DependentUpon>NewMember.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Repositories\IItemsOutRepository.cs" />
     <Compile Include="Repositories\IMemberRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>

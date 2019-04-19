@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library_Manager.Models
 {
@@ -11,6 +7,14 @@ namespace Library_Manager.Models
         public int LibraryID { get; }
         public string Name { get; }
         public string City { get; }
-        public string state { get; }
+        public string State { get; }
+
+        internal Library(int libraryID, string name, string city, string state)
+        {
+            LibraryID = libraryID;
+            Name = name;
+            City = city;
+            State = state;
+        }
     }
 }

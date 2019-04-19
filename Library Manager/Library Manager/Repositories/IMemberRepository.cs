@@ -9,6 +9,6 @@ namespace Library_Manager.Repositories
 {
     public interface IMemberRepository
     {
-        Member 
+        Member CreateMember();
     }
 }
