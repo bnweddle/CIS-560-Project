@@ -2,11 +2,12 @@
 	@MemberID INT
 AS
 
-SELECT T.ItemsOutID, I.LibraryID, I.BookID, I.CheckedOutDate, I.DueBackDate, I.ReturnedDate
+SELECT I.ItemsOutID, I.LibraryID, I.BookID, I.CheckedOutDate, I.DueBackDate, I.ReturnedDate, T.[Name]
 FROM Libraries.ItemsOut I
 	INNER JOIN Libraries.Member M ON M.MemberID = I.MemberID
 		AND M.MemberID = @MemberID
-	INNER JOIN Libraries.Book B  ON B.
+	INNER JOIN Libraries.Book B  ON B.LibraryID = I.LibraryID
+	INNER JOIN Libraries.Title T ON T.TitleID = b.TitleID
 WHERE I.ReturnedDate IS NULL
 
 
