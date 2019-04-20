@@ -17,6 +17,5 @@ namespace Library_Manager.Repositories
 
         List<Title> CheckedOutBooksForMember(int memberId);
 
-        void UpdateReturnDate(int itemOutId);
     }
 }

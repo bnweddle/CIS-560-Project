@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Library_Manager.Models;
 
 namespace Library_Manager.Repositories
@@ -11,6 +7,9 @@ namespace Library_Manager.Repositories
     {
         ItemsOut CreateCheckOut(int bookID, int memberID, int libraryID);
 
+        //Member should be able to select from list to return one of them
         List<ItemsOut> CheckedOutBooksForMember(int memberID);
+
+        void UpdateReturnDate(int ItemOutId);
     }
 }

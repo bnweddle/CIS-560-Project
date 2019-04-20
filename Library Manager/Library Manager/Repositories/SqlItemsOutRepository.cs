@@ -21,7 +21,7 @@ namespace Library_Manager.Repositories
         public ItemsOut CreateCheckOut(int bookID, int memberID, int libraryID)
         {
             var d = new CreateCheckOutDataDelegate(bookID, memberID, libraryID);
-            return executor.ExecuteReader(d);
+            return executor.ExecuteNonQuery(d);
         }
 
         public List<ItemsOut> CheckedOutBooksForMember(int memberID)
@@ -30,6 +30,9 @@ namespace Library_Manager.Repositories
             return executor.ExecuteReader(d);
         }
 
-
+        public void UpdateReturnDate(int ItemOutId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,7 @@ using System;
 
 namespace Library_Manager.DataDelegates
 {
-    public class CreateCheckOutDataDelegate : NonQueryDataDelegate<ItemsOut>
+    internal class CreateCheckOutDataDelegate : NonQueryDataDelegate<ItemsOut>
     {
         int LibraryID { get; }
         int MemberID { get; } 
