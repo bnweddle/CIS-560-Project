@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DataAccess;
 using Library_Manager.Models;
 using Library_Manager.DataDelegates;
@@ -21,18 +17,19 @@ namespace Library_Manager.Repositories
         public ItemsOut CreateCheckOut(int bookID, int memberID, int libraryID)
         {
             var d = new CreateCheckOutDataDelegate(bookID, memberID, libraryID);
-            return executor.ExecuteNonQuery(d);
+            return executor.ExecuteNonQuery(d); //prodecure has OUTPUT parameters
         }
 
         public List<ItemsOut> CheckedOutBooksForMember(int memberID)
         {
-            var d = new CheckedOutBooksForMemberDelegate(memberID);
-            return executor.ExecuteReader(d);
+            var d = new CheckedOutBooksForMemberDataDelegate(memberID);
+            return executor.ExecuteReader(d); 
         }
 
         public void UpdateReturnDate(int ItemOutId)
         {
-            throw new NotImplementedException();
+            var d = new ReturnBookDataDelegate(ItemOutId);
+            executor.ExecuteNonQuery(d);
         }
     }
 }
