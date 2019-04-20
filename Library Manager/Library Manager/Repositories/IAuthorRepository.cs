@@ -9,6 +9,6 @@ namespace Library_Manager.Repositories
 {
     interface IAuthorRepository
     {
-        IReadOnlyList<Title> FindBooksByAuthor(string authorName);
+        List<Title> FindBooksByAuthor(string authorName);
     }
 }

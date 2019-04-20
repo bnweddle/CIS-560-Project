@@ -1,6 +1,7 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.ReportMostPopularBooks
 AS 
 
+--ONLY 
 SELECT TOP(10) WITH TIES COUNT(*) NumOfCheckOuts, T.[Name],
 	MAX(I.CheckedOutDate) AS LastCheckedOut,
 	MAX(T.PublicationYear) AS NewerBooks

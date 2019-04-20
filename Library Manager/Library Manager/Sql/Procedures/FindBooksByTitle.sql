@@ -1,5 +1,6 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.FindBooksByTitle
 	@TitleNamePattern NVARCHAR(265)
+	--DataDelegate "%" + Pattern + "%"
 AS
 SELECT T.TitleID, T.ISBN, T.[Name], A.FullName, T.PublicationYear
 FROM Libraries.Title T
