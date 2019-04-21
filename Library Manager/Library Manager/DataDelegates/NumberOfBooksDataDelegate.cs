@@ -10,12 +10,23 @@ namespace Library_Manager.DataDelegates
 	{
         public NumberOfBooksDataDelegate() : base("Libraries.NumberOfBooks")
         {
-
         }
 
         public override IReadOnlyDictionary<int, string> Translate(SqlCommand command, SqlDataReader reader)
         {
+            int quantity;
+            string NameofBooks;
 
+            var dict = new Dictionary<int, string>();
+
+            while(reader.Read())
+            {
+                quantity = reader.GetInt32(reader.GetOrdinal("Quantity"));
+                NameofBooks = reader.GetString(reader.GetOrdinal("T.[Name]"));
+
+                dict.Add(quantity, NameofBooks);
+            }
+            return dict;
         }
 	}
 }

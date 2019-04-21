@@ -14,6 +14,5 @@ namespace Library_Manager.Repositories
         IReadOnlyDictionary<int, string> MostPopularBooks(); //NumOfChecks, NameOfBook
 
         IReadOnlyDictionary<int, string> NumberOfBooks(); //Quantity, NameOfBook
-
     }
 }
