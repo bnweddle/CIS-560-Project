@@ -60,6 +60,10 @@
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="DataDelegates\CheckedOutBooksForMemberDataDelegate.cs" />
     <Compile Include="DataDelegates\CreateCheckOutDataDelegate.cs" />
+    <Compile Include="DataDelegates\FindBookByTitleDataDelegate.cs" />
+    <Compile Include="DataDelegates\FindBooksByAuthorDataDelegate.cs" />
+    <Compile Include="DataDelegates\MostPopularBooksDataDelegate.cs" />
+    <Compile Include="DataDelegates\NumberOfBooksDataDelegate.cs" />
     <Compile Include="DataDelegates\ReturnBookDataDelegate.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
@@ -84,6 +88,7 @@
     <Compile Include="Repositories\IItemsOutRepository.cs" />
     <Compile Include="Repositories\IMemberRepository.cs" />
     <Compile Include="Repositories\ITitleRepository.cs" />
+    <Compile Include="Repositories\SqlAuthorRepository.cs" />
     <Compile Include="Repositories\SqlItemsOutRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
