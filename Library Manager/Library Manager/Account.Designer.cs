@@ -1,6 +1,6 @@
 ﻿namespace Library_Manager
 {
-    partial class Library
+    partial class Account
     {
         /// <summary>
         /// Required designer variable.

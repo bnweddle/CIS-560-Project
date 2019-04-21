@@ -73,11 +73,11 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ItemsOut.cs" />
     <Compile Include="Models\Library.cs" />
-    <Compile Include="Library.cs">
+    <Compile Include="Account.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Library.Designer.cs">
-      <DependentUpon>Library.cs</DependentUpon>
+    <Compile Include="Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Title.cs" />
@@ -102,8 +102,9 @@
       <DependentUpon>SignIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Library.resx">
-      <DependentUpon>Library.cs</DependentUpon>
+    <Compile Include="Testing\Test1.cs" />
+    <EmbeddedResource Include="Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewMember.resx">
       <DependentUpon>NewMember.cs</DependentUpon>

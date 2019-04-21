@@ -31,23 +31,26 @@
             this.uxSignInButton = new System.Windows.Forms.Button();
             this.uxNewMemberButton = new System.Windows.Forms.Button();
             this.UxLabelEmail = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.uxSignInTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // uxSignInButton
             // 
-            this.uxSignInButton.Location = new System.Drawing.Point(209, 90);
+            this.uxSignInButton.Location = new System.Drawing.Point(157, 73);
+            this.uxSignInButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uxSignInButton.Name = "uxSignInButton";
-            this.uxSignInButton.Size = new System.Drawing.Size(130, 46);
+            this.uxSignInButton.Size = new System.Drawing.Size(98, 37);
             this.uxSignInButton.TabIndex = 0;
             this.uxSignInButton.Text = "Sign In";
             this.uxSignInButton.UseVisualStyleBackColor = true;
+            this.uxSignInButton.Click += new System.EventHandler(this.uxSignInButton_Click);
             // 
             // uxNewMemberButton
             // 
-            this.uxNewMemberButton.Location = new System.Drawing.Point(27, 87);
+            this.uxNewMemberButton.Location = new System.Drawing.Point(20, 71);
+            this.uxNewMemberButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.uxNewMemberButton.Name = "uxNewMemberButton";
-            this.uxNewMemberButton.Size = new System.Drawing.Size(136, 49);
+            this.uxNewMemberButton.Size = new System.Drawing.Size(102, 40);
             this.uxNewMemberButton.TabIndex = 1;
             this.uxNewMemberButton.Text = "New Member";
             this.uxNewMemberButton.UseVisualStyleBackColor = true;
@@ -56,28 +59,31 @@
             // UxLabelEmail
             // 
             this.UxLabelEmail.AutoSize = true;
-            this.UxLabelEmail.Location = new System.Drawing.Point(24, 23);
+            this.UxLabelEmail.Location = new System.Drawing.Point(18, 19);
+            this.UxLabelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UxLabelEmail.Name = "UxLabelEmail";
-            this.UxLabelEmail.Size = new System.Drawing.Size(80, 17);
+            this.UxLabelEmail.Size = new System.Drawing.Size(60, 13);
             this.UxLabelEmail.TabIndex = 2;
             this.UxLabelEmail.Text = "Enter Email";
             // 
-            // textBox1
+            // uxSignInTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 3;
+            this.uxSignInTextBox.Location = new System.Drawing.Point(94, 19);
+            this.uxSignInTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.uxSignInTextBox.Name = "uxSignInTextBox";
+            this.uxSignInTextBox.Size = new System.Drawing.Size(161, 20);
+            this.uxSignInTextBox.TabIndex = 3;
             // 
             // SignIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 152);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(282, 124);
+            this.Controls.Add(this.uxSignInTextBox);
             this.Controls.Add(this.UxLabelEmail);
             this.Controls.Add(this.uxNewMemberButton);
             this.Controls.Add(this.uxSignInButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SignIn";
             this.Text = "Sign In";
             this.ResumeLayout(false);
@@ -90,7 +96,7 @@
         private System.Windows.Forms.Button uxSignInButton;
         private System.Windows.Forms.Button uxNewMemberButton;
         private System.Windows.Forms.Label UxLabelEmail;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox uxSignInTextBox;
     }
 }
 
