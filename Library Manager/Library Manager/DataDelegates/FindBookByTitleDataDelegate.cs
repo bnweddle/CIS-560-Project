@@ -15,6 +15,14 @@ namespace Library_Manager.DataDelegates
             TitleName = titleName;
         }
 
+        public override void PrepareCommand(SqlCommand command)
+        {
+            base.PrepareCommand(command);
+
+            var p = command.Parameters.Add("%" + TitleName + "%", SqlDbType.NVarChar);
+            p.Value = TitleName;
+        }
+
         public override List<Title> Translate(SqlCommand command, SqlDataReader reader)
         {
             var books = new List<Title>();
@@ -25,7 +33,7 @@ namespace Library_Manager.DataDelegates
                     reader.GetInt32(reader.GetOrdinal("TitleID")),
                     reader.GetString(reader.GetOrdinal("ISBN")),
                     reader.GetInt32(reader.GetOrdinal("AuthorID")),
-                    "%" + TitleName + "%",
+                    TitleName,
                     reader.GetInt32(reader.GetOrdinal("PublicationYear"))));
             }
             return books;
