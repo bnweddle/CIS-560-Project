@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Library_Manager.DataDelegates
 {
-    internal class FindBookByTitleDataDelegate : DataReaderDelegate<IReadOnlyList<Title>>
+    internal class FindBookByTitleDataDelegate : DataReaderDelegate<List<Title>>
     {
         string TitleName { get; }
 
@@ -15,7 +15,7 @@ namespace Library_Manager.DataDelegates
             TitleName = titleName;
         }
 
-        public override IReadOnlyList<Title> Translate(SqlCommand command, SqlDataReader reader)
+        public override List<Title> Translate(SqlCommand command, SqlDataReader reader)
         {
             var books = new List<Title>();
 

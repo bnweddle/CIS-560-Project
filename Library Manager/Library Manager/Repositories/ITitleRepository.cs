@@ -9,7 +9,7 @@ namespace Library_Manager.Repositories
 {
     interface ITitleRepository
     {
-        IReadOnlyList<Title> FindBooksByTitle(string titleName); 
+        List<Title> FindBooksByTitle(string titleName); 
 
         IReadOnlyDictionary<int, string> MostPopularBooks(); //NumOfChecks, NameOfBook
 
