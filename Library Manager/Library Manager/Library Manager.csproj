@@ -63,6 +63,7 @@
     <Compile Include="DataDelegates\CreateMemberDataDelegate.cs" />
     <Compile Include="DataDelegates\FindBookByTitleDataDelegate.cs" />
     <Compile Include="DataDelegates\FindBooksByAuthorDataDelegate.cs" />
+    <Compile Include="DataDelegates\GetMemberbyEmailDataDelegate.cs" />
     <Compile Include="DataDelegates\MostPopularBooksDataDelegate.cs" />
     <Compile Include="DataDelegates\NumberOfBooksDataDelegate.cs" />
     <Compile Include="DataDelegates\ReturnBookDataDelegate.cs" />
