@@ -22,11 +22,11 @@ namespace Library_Manager.DataDelegates
             while (reader.Read())
             {
                 books.Add(new Title(
-                    reader.GetInt(reader.GetOrdinal("TitleID")),
+                    reader.GetInt32(reader.GetOrdinal("TitleID")),
                     reader.GetString(reader.GetOrdinal("ISBN")),
-                    reader.GetInt(reader.GetOrdinal("AuthorID")),
+                    reader.GetInt32(reader.GetOrdinal("AuthorID")),
                     "%" + TitleName + "%",
-                    reader.GetInt(reader.GetOrdinal("PublicationYear"))));
+                    reader.GetInt32(reader.GetOrdinal("PublicationYear"))));
             }
             return books;
         }
