@@ -22,7 +22,11 @@ namespace Library_Manager.DataDelegates
             while (reader.Read())
             {
                 books.Add(new Title(
-                    reader.GetString(reader.GetOriginal("Name"))));
+                    reader.GetInt(reader.GetOriginal("TitleID")),
+                    reader.GetString(reader.GetOriginal("ISBN")),
+                    reader.GetInt(reader.GetOriginal("AuthorID")),
+                    reader.GetString(reader.GetOriginal("Name")),
+                    reader.GetInt(reader.GetOriginal("PublicationYear"))));
             }
             return books;
         }
