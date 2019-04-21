@@ -88,6 +88,15 @@
             // uxLibraryChoose
             // 
             this.uxLibraryChoose.FormattingEnabled = true;
+            this.uxLibraryChoose.Items.AddRange(new object[] {
+            "Wichita Public Library",
+            "Manhattan Public Library",
+            "Topeka Public Library",
+            "Lawrence Public Library",
+            "Park City Public Library",
+            "Evergreen Branch Library",
+            "Rockwell Branch Library",
+            "Alford Branch Library"});
             this.uxLibraryChoose.Location = new System.Drawing.Point(174, 34);
             this.uxLibraryChoose.Name = "uxLibraryChoose";
             this.uxLibraryChoose.Size = new System.Drawing.Size(121, 24);

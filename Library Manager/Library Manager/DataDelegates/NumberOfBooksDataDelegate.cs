@@ -8,7 +8,7 @@ namespace Library_Manager.DataDelegates
 {
     internal class NumberOfBooksDataDelegate : DataReaderDelegate<IReadOnlyDictionary<int, string>>
 	{
-        public NumberOfBooksDataDelegate() : base("Libraries.NumberOfBooks")
+        public NumberOfBooksDataDelegate() : base("Libraries.ReportNumberOfBooks")
         {
         }
 
