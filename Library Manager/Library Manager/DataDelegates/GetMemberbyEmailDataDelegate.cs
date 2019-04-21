@@ -16,6 +16,14 @@ namespace Library_Manager.DataDelegates
             Email = email;
         }
 
+        public override void PrepareCommand(SqlCommand command)
+        {
+            base.PrepareCommand(command);
+
+            var p = command.Parameters.Add("Email", SqlDbType.NVarChar);
+            p.Value = Email;
+        }
+
         public override Member Translate(SqlCommand command, SqlDataReader reader)
         {
             return new Member(reader.GetInt32(reader.GetOrdinal("MemberID")),

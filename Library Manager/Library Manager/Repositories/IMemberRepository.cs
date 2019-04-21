@@ -13,6 +13,6 @@ namespace Library_Manager.Repositories
 
         Member CreateMember(int libraryId, string firstName, string lastName, string email, string phone);
 
-        Library RetrieveLibraryByName(string name);
+        Library2 RetrieveLibraryByName(string name);
     }
 }
