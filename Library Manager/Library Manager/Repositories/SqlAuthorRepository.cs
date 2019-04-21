@@ -18,5 +18,12 @@ namespace Library_Manager.Repositories
             var d = new FindBooksByAuthorDataDelegate(authorName);
             return executor.ExecuteReader(d); //prodecure has OUTPUT parameters
         }
+
+        public IReadOnlyList<string> Top10Authors()
+        {
+            var d = new Top10AuthorsDataDelegate();
+            return executor.ExecuteReader(d); //prodecure has OUTPUT parameters
+        }
+
     }
 }
