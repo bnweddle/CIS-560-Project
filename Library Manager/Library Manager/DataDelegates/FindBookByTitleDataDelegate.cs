@@ -2,11 +2,11 @@
 using System.Data;
 using System.Data.SqlClient;
 using Library_Manager.Models;
-using System;
+using System.Collections.Generic;
 
 namespace Library_Manager.DataDelegates
 {
-    internal class FindBookByTitleDataDelegate : DataReaderDelegate<List<Title>>
+    internal class FindBookByTitleDataDelegate : DataReaderDelegate<List<string>>
     {
         string TitleName { get; }
 
@@ -15,13 +15,24 @@ namespace Library_Manager.DataDelegates
             if (string.IsNullOrWhiteSpace(titleName))
             {
                 throw new ArgumentException("The title name cannot be null or empty.", nameof(titleName));
-
             }
             TitleName = titleName;
         }
-    }
-    public virtual void PrepareCommand(SqlCommand command)
-    {
 
+        public override List<string> Translate(SqlCommand command, SqlDataReader reader)
+        {
+            var books = new List<Book>();
+
+            while (reader.Read())
+            {
+                books.Add(new Book(
+                    reader.GetString(reader.GetOriginal("Name"),
+                    reader.GetInt(reader.GetOriginal("TitleID"),
+                    reader.GetString(reader.GetOriginal("ISBN"),
+                    reader.GetString(reader.GetOriginal("AuthorID"),
+                    reader.GetString(reader.GetOriginal("PublicationYear"))));
+            }
+            return books;
+        }
     }
 }
