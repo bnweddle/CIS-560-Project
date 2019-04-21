@@ -14,6 +14,9 @@ namespace Library_Manager.Repositories
         private readonly SqlCommandExecutor executor;
         public List<Title> FindBooksByTitle(string titleName)
         {
+            if (string.IsNullOrWhiteSpace(titleName))
+                throw new ArgumentException("The parameter cannot be null or empty.", nameof(titleName));
+
             var d = new FindBooksByTitleDataDelegate(titleName);
             return executor.ExecuteReader(d);
         }

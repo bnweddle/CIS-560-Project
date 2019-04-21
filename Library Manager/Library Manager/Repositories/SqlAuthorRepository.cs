@@ -15,6 +15,9 @@ namespace Library_Manager.Repositories
 
         public List<Title> FindBooksByAuthor(string authorName)
         {
+             if (string.IsNullOrWhiteSpace(authorName))
+                throw new ArgumentException("The parameter cannot be null or empty.", nameof(authorName));
+
             var d = new FindBooksByAuthorDataDelegate(authorName);
             return executor.ExecuteReader(d); //prodecure has OUTPUT parameters
         }
