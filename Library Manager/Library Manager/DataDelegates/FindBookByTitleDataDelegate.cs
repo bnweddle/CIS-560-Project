@@ -31,8 +31,8 @@ namespace Library_Manager.DataDelegates
             {
                 books.Add(new Title(
                     reader.GetInt32(reader.GetOrdinal("TitleID")),
-                    reader.GetString(reader.GetOrdinal("ISBN")),
                     reader.GetInt32(reader.GetOrdinal("AuthorID")),
+                    reader.GetString(reader.GetOrdinal("ISBN")),               
                     TitleName,
                     reader.GetInt32(reader.GetOrdinal("PublicationYear"))));
             }
