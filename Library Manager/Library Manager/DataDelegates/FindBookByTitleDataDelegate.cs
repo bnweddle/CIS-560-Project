@@ -10,7 +10,7 @@ namespace Library_Manager.DataDelegates
     {
         string TitleName { get; }
 
-        public FindBookByTitleDataDelegate(string titleName) : base("Libraries.FindBookByTitle")
+        public FindBookByTitleDataDelegate(string titleName) : base("Libraries.FindBooksByTitle")
         {
             TitleName = titleName;
         }
