@@ -25,7 +25,7 @@ namespace Library_Manager.DataDelegates
                     reader.GetInt(reader.GetOriginal("TitleID")),
                     reader.GetString(reader.GetOriginal("ISBN")),
                     reader.GetInt(reader.GetOriginal("AuthorID")),
-                    reader.GetString(reader.GetOriginal("Name")),
+                    "%" + TitleName + "%",
                     reader.GetInt(reader.GetOriginal("PublicationYear"))));
             }
             return books;

@@ -13,11 +13,11 @@ namespace Library_Manager.DataDelegates
 {
     class FindBooksByAuthorDataDelegate : DataReaderDelegate<List<Title>>
     {
-        int authorID;
-        public FindBooksByAuthorDataDelegate(int aid)
+        string AuthorName { get; } 
+        public FindBooksByAuthorDataDelegate(string authorName)
             : base("Libraries.FindBooksByAuthor")
         {
-            authorID = aid;
+            AuthorName = authorName;
         }
 
         public override List<Title> Translate(SqlCommand command, SqlDataReader reader)
@@ -29,7 +29,7 @@ namespace Library_Manager.DataDelegates
                 list.Add(new Title(reader.GetInt32(reader.GetOrdinal("TitleID")),
                                     reader.GetInt32(reader.GetOrdinal("AuthorID")),
                                     reader.GetString(reader.GetOrdinal("ISBN")),
-                                    reader.GetString(reader.GetOrdinal("Name")),
+                                    "%" + AuthorName + "%",     
                                     reader.GetInt32(reader.GetOrdinal("PublicationYear"))));
             }
             return list;
