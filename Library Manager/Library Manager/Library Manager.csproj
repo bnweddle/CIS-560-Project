@@ -60,6 +60,7 @@
     <Compile Include="DataAccess\SqlCommandExecutor.cs" />
     <Compile Include="DataDelegates\CheckedOutBooksForMemberDataDelegate.cs" />
     <Compile Include="DataDelegates\CreateCheckOutDataDelegate.cs" />
+    <Compile Include="DataDelegates\CreateMemberDataDelegate.cs" />
     <Compile Include="DataDelegates\FindBookByTitleDataDelegate.cs" />
     <Compile Include="DataDelegates\FindBooksByAuthorDataDelegate.cs" />
     <Compile Include="DataDelegates\MostPopularBooksDataDelegate.cs" />
