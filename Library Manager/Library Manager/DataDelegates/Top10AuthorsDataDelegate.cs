@@ -21,13 +21,15 @@ namespace Library_Manager.DataDelegates
 
         public override IReadOnlyList<string> Translate(SqlCommand command, SqlDataReader reader)
         {
-            List<string> list;
+            List<string> list = new List<string>();
             IReadOnlyList<string> listFinished;
 
             while (reader.Read())
             {
-                list.Add(reader.GetString(reader.get))
+                list.Add(reader.GetString(reader.GetOrdinal("FirstName")) + reader.GetString(reader.GetOrdinal("MiddleName")) + reader.GetString(reader.GetOrdinal("LastName")));
             }
+            listFinished = list;
+            return listFinished;
         }
     }
 }
