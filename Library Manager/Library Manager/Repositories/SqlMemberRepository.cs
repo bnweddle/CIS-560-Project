@@ -26,6 +26,18 @@ namespace Library_Manager.Repositories
 
         public Member CreateMember(int libraryId, string firstName, string lastName, string email, string phone)
         {
+            if (firstName == null)
+                throw new ArgumentNullException(nameof(firstName));
+
+            if (lastName == null)
+                throw new ArgumentNullException(nameof(lastName));
+
+            if (email == null)
+                throw new ArgumentNullException(nameof(email));
+
+            if (phone == null)
+                throw new ArgumentNullException(nameof(phone));
+
             var d = new CreateMemberDataDelegate(libraryId, firstName, lastName, email, phone);
             return executor.ExecuteNonQuery(d); //prodecure has OUTPUT parameters
         }
