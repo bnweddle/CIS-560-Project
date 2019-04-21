@@ -67,6 +67,7 @@
     <Compile Include="DataDelegates\MostPopularBooksDataDelegate.cs" />
     <Compile Include="DataDelegates\NumberOfBooksDataDelegate.cs" />
     <Compile Include="DataDelegates\ReturnBookDataDelegate.cs" />
+    <Compile Include="DataDelegates\Top10AuthorsDataDelegate.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ItemsOut.cs" />

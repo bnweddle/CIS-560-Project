@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    "\\Library Manager"
+    "",
+    "\\Library Manager",
+    "\\Library Manager\\Library Manager",
+    "\\Library Manager\\Library Manager\\Repositories"
   ],
+  "SelectedNode": "\\Library Manager\\Library Manager\\Repositories\\IAuthorRepository.cs",
   "PreviewInSolutionExplorer": false
 }

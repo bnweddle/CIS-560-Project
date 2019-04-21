@@ -10,5 +10,6 @@ namespace Library_Manager.Repositories
     interface IAuthorRepository
     {
         List<Title> FindBooksByAuthor(string authorName);
+        IReadOnlyList<string> Top10Authors();
     }
 }
