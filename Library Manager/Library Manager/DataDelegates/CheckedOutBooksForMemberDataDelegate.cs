@@ -41,7 +41,7 @@ namespace Library_Manager.DataDelegates
                    reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")),
                    reader.GetDateTime(reader.GetOrdinal("DueBackDate")),
                    reader.GetDateTime(reader.GetOrdinal("ReturnedDate")));
-                key = reader.GetString(reader.GetOrdinal("T.Name"));
+                key = reader.GetString(reader.GetOrdinal("Name"));
 
                 dict.Add(key, values);
             }
