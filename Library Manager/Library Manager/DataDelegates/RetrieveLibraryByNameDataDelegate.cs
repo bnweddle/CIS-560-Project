@@ -26,6 +26,9 @@ namespace Library_Manager.DataDelegates
 
         public override Library2 Translate(SqlCommand command, SqlDataReader reader)
         {
+            if (!reader.Read())
+                return null;
+
             return new Library2(
                 reader.GetInt32(reader.GetOrdinal("LibraryID")),
                 reader.GetString(reader.GetOrdinal("Name")),

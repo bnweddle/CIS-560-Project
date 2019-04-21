@@ -94,6 +94,7 @@
     <Compile Include="Repositories\ITitleRepository.cs" />
     <Compile Include="Repositories\SqlAuthorRepository.cs" />
     <Compile Include="Repositories\SqlItemsOutRepository.cs" />
+    <Compile Include="Repositories\SqlMemberRepository.cs" />
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>

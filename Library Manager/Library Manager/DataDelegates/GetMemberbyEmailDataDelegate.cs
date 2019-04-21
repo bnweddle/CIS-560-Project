@@ -26,6 +26,9 @@ namespace Library_Manager.DataDelegates
 
         public override Member Translate(SqlCommand command, SqlDataReader reader)
         {
+            if (!reader.Read())
+                return null;
+
             return new Member(reader.GetInt32(reader.GetOrdinal("MemberID")),
                     reader.GetInt32(reader.GetOrdinal("LibraryID")),
                     reader.GetString(reader.GetOrdinal("FirstName")),
