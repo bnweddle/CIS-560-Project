@@ -38,6 +38,7 @@
             this.uxLastNameText = new System.Windows.Forms.TextBox();
             this.uxEmailText = new System.Windows.Forms.TextBox();
             this.uxPhoneText = new System.Windows.Forms.TextBox();
+            this.uxSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,8 +90,8 @@
             // 
             this.uxLibraryChoose.FormattingEnabled = true;
             this.uxLibraryChoose.Items.AddRange(new object[] {
-            "Wichita Public Library",
             "Manhattan Public Library",
+            "Wichita Public Library",
             "Topeka Public Library",
             "Lawrence Public Library",
             "Park City Public Library",
@@ -99,7 +100,7 @@
             "Alford Branch Library"});
             this.uxLibraryChoose.Location = new System.Drawing.Point(174, 34);
             this.uxLibraryChoose.Name = "uxLibraryChoose";
-            this.uxLibraryChoose.Size = new System.Drawing.Size(121, 24);
+            this.uxLibraryChoose.Size = new System.Drawing.Size(196, 24);
             this.uxLibraryChoose.TabIndex = 5;
             // 
             // uxFirstNameText
@@ -130,11 +131,22 @@
             this.uxPhoneText.Size = new System.Drawing.Size(196, 22);
             this.uxPhoneText.TabIndex = 9;
             // 
+            // uxSubmit
+            // 
+            this.uxSubmit.Location = new System.Drawing.Point(264, 236);
+            this.uxSubmit.Name = "uxSubmit";
+            this.uxSubmit.Size = new System.Drawing.Size(106, 33);
+            this.uxSubmit.TabIndex = 10;
+            this.uxSubmit.Text = "Submit";
+            this.uxSubmit.UseVisualStyleBackColor = true;
+            this.uxSubmit.Click += new System.EventHandler(this.uxSubmit_Click);
+            // 
             // NewMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 254);
+            this.ClientSize = new System.Drawing.Size(410, 281);
+            this.Controls.Add(this.uxSubmit);
             this.Controls.Add(this.uxPhoneText);
             this.Controls.Add(this.uxEmailText);
             this.Controls.Add(this.uxLastNameText);
@@ -164,5 +176,6 @@
         private System.Windows.Forms.TextBox uxLastNameText;
         private System.Windows.Forms.TextBox uxEmailText;
         private System.Windows.Forms.TextBox uxPhoneText;
+        private System.Windows.Forms.Button uxSubmit;
     }
 }

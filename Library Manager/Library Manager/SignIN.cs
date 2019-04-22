@@ -39,7 +39,7 @@ namespace Library_Manager
             }
             else
             {
-                var library = new Account();
+                var library = new Account(m);
                 library.Show();
             }
         }

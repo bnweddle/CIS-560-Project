@@ -33,7 +33,7 @@ namespace Library_Manager.DataDelegates
                     reader.GetInt32(reader.GetOrdinal("LibraryID")),
                     reader.GetString(reader.GetOrdinal("FirstName")),
                     reader.GetString(reader.GetOrdinal("LastName")),
-                    reader.GetString(reader.GetOrdinal("Email")),
+                    Email,
                     reader.GetString(reader.GetOrdinal("Phone")));
         }
     }

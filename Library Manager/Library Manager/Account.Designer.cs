@@ -126,9 +126,9 @@
             "Most Popular Authors",
             "Number Of Books in All",
             "Over Due Books Past 3 Weeks"});
-            this.comboBox1.Location = new System.Drawing.Point(152, 239);
+            this.comboBox1.Location = new System.Drawing.Point(158, 239);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(218, 24);
             this.comboBox1.TabIndex = 9;
             // 
             // label2
@@ -140,7 +140,7 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Report Queries";
             // 
-            // Library
+            // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -155,7 +155,7 @@
             this.Controls.Add(this.uxSearchBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uxDataView);
-            this.Name = "Library";
+            this.Name = "Account";
             this.Text = "Library";
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).EndInit();

@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Library_Manager.Models;
 
 namespace Library_Manager
 {
     public partial class Account : Form
     {
-        public Account()
+        public Member member;
+        public Account(Member m)
         {
+            member = m;
             InitializeComponent();
         }
     }
