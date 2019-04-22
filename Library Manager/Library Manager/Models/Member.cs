@@ -4,12 +4,12 @@ namespace Library_Manager.Models
 {
     public class Member
     {
-        int MemberID { get; }
-        int LibraryID { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string Email { get; set; }
-        string Phone { get; set; }  
+        public int MemberID { get; }
+        public int LibraryID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }  
 
         internal Member(int memberId, int libraryId, string firstName, string lastName, string email, string phone)
         {

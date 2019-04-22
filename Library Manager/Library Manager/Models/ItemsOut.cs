@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Library_Manager.Models
         DateTime CheckedOutDate { get; set; }
         DateTime DueDate { get; set; }
         DateTime ReturnedDate { get; set; }
+
+        public BindingList<ItemsOut> list { get; }
 
         internal ItemsOut(int IID, int LID, int MID, int BID, DateTime COD, DateTime DD, DateTime RD)
         {

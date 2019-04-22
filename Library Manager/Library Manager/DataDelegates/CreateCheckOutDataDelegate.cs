@@ -48,7 +48,8 @@ namespace Library_Manager.DataDelegates
 
         public override ItemsOut Translate(SqlCommand command)
         {
-            return new ItemsOut((int)command.Parameters["ItemsOutID"].Value, LibraryID, MemberID,
+            return new ItemsOut((int)command.Parameters["ItemsOutID"].Value, LibraryID, 
+                MemberID,
                 BookID, (DateTime)command.Parameters["CheckedOutDate"].Value, 
                 (DateTime)command.Parameters["DueBackDate"].Value, 
                 (DateTime)command.Parameters["ReturnedDate"].Value);

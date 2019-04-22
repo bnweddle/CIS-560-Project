@@ -30,9 +30,12 @@ namespace Library_Manager.DataDelegates
             string key;
             var dict = new Dictionary<string, ItemsOut>();
 
-
+            
             while (reader.Read())
             {
+                
+
+
                 values = new ItemsOut(
                    reader.GetInt32(reader.GetOrdinal("ItemsOutID")),
                    reader.GetInt32(reader.GetOrdinal("LibrayID")),
@@ -40,10 +43,10 @@ namespace Library_Manager.DataDelegates
                    reader.GetInt32(reader.GetOrdinal("BookID")),
                    reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")),
                    reader.GetDateTime(reader.GetOrdinal("DueBackDate")),
-                   reader.GetDateTime(reader.GetOrdinal("ReturnedDate")));
-                key = reader.GetString(reader.GetOrdinal("Name"));
+                   reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")));
+                //key = ;
 
-                dict.Add(key, values);
+                dict.Add(reader.GetString(reader.GetOrdinal("Name")), values);
             }
 
             return dict;
