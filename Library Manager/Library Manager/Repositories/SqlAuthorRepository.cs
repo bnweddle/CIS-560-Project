@@ -13,6 +13,11 @@ namespace Library_Manager.Repositories
     {
         private readonly SqlCommandExecutor executor;
 
+        public SqlAuthorRepository(string connectionString)
+        {
+            executor = new SqlCommandExecutor(connectionString);
+        }
+
         public List<Title> FindBooksByAuthor(string authorName)
         {
              if (string.IsNullOrWhiteSpace(authorName))

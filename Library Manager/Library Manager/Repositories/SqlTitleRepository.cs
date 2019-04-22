@@ -9,6 +9,12 @@ namespace Library_Manager.Repositories
     class SqlTitleRepository : ITitleRepository
 	{
         private readonly SqlCommandExecutor executor;
+
+        public SqlTitleRepository(string connectionString)
+        {
+            executor = new SqlCommandExecutor(connectionString);
+        }
+
         public List<Title> FindBooksByTitle(string titleName)
         {
             if (string.IsNullOrWhiteSpace(titleName))

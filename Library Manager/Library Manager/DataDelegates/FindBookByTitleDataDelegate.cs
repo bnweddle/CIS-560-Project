@@ -19,7 +19,7 @@ namespace Library_Manager.DataDelegates
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("%" + TitleName + "%", SqlDbType.NVarChar);
+            var p = command.Parameters.Add("TitleNamePattern", SqlDbType.NVarChar);
             p.Value = TitleName;
         }
 
