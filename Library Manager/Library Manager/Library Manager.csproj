@@ -69,7 +69,7 @@
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ItemsOut.cs" />
-    <Compile Include="Models\Library.cs" />
+    <Compile Include="Models\Library2.cs" />
     <Compile Include="Account.cs">
       <SubType>Form</SubType>
     </Compile>

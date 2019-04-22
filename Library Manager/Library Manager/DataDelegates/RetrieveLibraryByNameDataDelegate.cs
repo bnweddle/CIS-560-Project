@@ -31,7 +31,7 @@ namespace Library_Manager.DataDelegates
 
             return new Library2(
                 reader.GetInt32(reader.GetOrdinal("LibraryID")),
-                reader.GetString(reader.GetOrdinal("Name")),
+                Name,
                 reader.GetString(reader.GetOrdinal("City")),
                 reader.GetString(reader.GetOrdinal("State"))
             );
