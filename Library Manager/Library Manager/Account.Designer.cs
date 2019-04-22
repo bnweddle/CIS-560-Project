@@ -38,7 +38,7 @@
             this.uxCheckOutButton = new System.Windows.Forms.Button();
             this.uxListOfItemsDisplayed = new System.Windows.Forms.Label();
             this.uxReturnBook = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.uxReportQueries = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
@@ -117,19 +117,19 @@
             this.uxReturnBook.Text = "Return Book(s)";
             this.uxReturnBook.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // uxReportQueries
             // 
-            this.comboBox1.DisplayMember = "Hello";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.uxReportQueries.DisplayMember = "Hello";
+            this.uxReportQueries.FormattingEnabled = true;
+            this.uxReportQueries.Items.AddRange(new object[] {
             "Most Popular Books",
             "Most Popular Authors",
             "Number Of Books in All",
             "Over Due Books Past 3 Weeks"});
-            this.comboBox1.Location = new System.Drawing.Point(158, 239);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 24);
-            this.comboBox1.TabIndex = 9;
+            this.uxReportQueries.Location = new System.Drawing.Point(158, 239);
+            this.uxReportQueries.Name = "uxReportQueries";
+            this.uxReportQueries.Size = new System.Drawing.Size(218, 24);
+            this.uxReportQueries.TabIndex = 9;
             // 
             // label2
             // 
@@ -146,7 +146,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1212, 450);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.uxReportQueries);
             this.Controls.Add(this.uxReturnBook);
             this.Controls.Add(this.uxListOfItemsDisplayed);
             this.Controls.Add(this.uxCheckOutButton);
@@ -175,7 +175,7 @@
         private System.Windows.Forms.Button uxCheckOutButton;
         private System.Windows.Forms.Label uxListOfItemsDisplayed;
         private System.Windows.Forms.Button uxReturnBook;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox uxReportQueries;
         private System.Windows.Forms.Label label2;
     }
 }
