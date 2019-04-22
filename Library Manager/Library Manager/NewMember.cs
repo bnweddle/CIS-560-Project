@@ -33,6 +33,7 @@ namespace Library_Manager
                 uxFirstNameText.Text.Equals("") || uxLastNameText.Text.Equals("") || uxPhoneText.Text.Equals(""))
             {
                 MessageBox.Show("Null or invalid inputs");
+                MessageBox.Show(uxLibraryChoose.GetItemText(uxLibraryChoose.SelectedItem));
             }      
             else
             {
