@@ -11,7 +11,7 @@ namespace Library_Manager.DataDelegates
         string Email { get; }
 
         public GetMemberbyEmailDataDelegate(string email)
-        : base("Libraries.GetMemberbyEmail")
+        : base("Libraries.GetMemberForEmail")
         {
             Email = email;
         }

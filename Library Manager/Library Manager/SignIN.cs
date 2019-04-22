@@ -29,7 +29,7 @@ namespace Library_Manager
         private void uxSignInButton_Click(object sender, EventArgs e)
         {
             //TransactionScope tran = new TransactionScope();
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=knzeiler;Integrated Security=SSPI;";
+            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
 
             SqlMemberRepository SqlMem = new SqlMemberRepository(connectionString);
             Member m = SqlMem.GetMemberbyEmail(uxSignInTextBox.Text);

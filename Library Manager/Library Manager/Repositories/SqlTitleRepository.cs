@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DataAccess;
 using Library_Manager.Models;
 using Library_Manager.DataDelegates;
@@ -17,7 +14,7 @@ namespace Library_Manager.Repositories
             if (string.IsNullOrWhiteSpace(titleName))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(titleName));
 
-            var d = new FindBooksByTitleDataDelegate(titleName);
+            var d = new FindBookByTitleDataDelegate(titleName);
             return executor.ExecuteReader(d);
         }
 
