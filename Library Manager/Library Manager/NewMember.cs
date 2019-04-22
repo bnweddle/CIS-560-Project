@@ -35,6 +35,7 @@ namespace Library_Manager
                 SqlMem.CreateMember(uxLibraryChoose.SelectedIndex + 1, uxFirstNameText.Text.Trim(), uxLastNameText.Text.Trim(),
                     uxEmailText.Text.Trim(), uxPhoneText.Text.Trim());
                 MessageBox.Show("Member was created");
+                Close();
             }
 
 

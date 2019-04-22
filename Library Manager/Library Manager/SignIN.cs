@@ -28,19 +28,19 @@ namespace Library_Manager
 
         private void uxSignInButton_Click(object sender, EventArgs e)
         {
-            //TransactionScope tran = new TransactionScope();
             const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
-
+         
             SqlMemberRepository SqlMem = new SqlMemberRepository(connectionString);
-            Member m = SqlMem.GetMemberbyEmail(uxSignInTextBox.Text);
-            if(m == null)
+            Member m = SqlMem.GetMemberbyEmail(uxSignInTextBox.Text.Trim());
+            if ((string.IsNullOrWhiteSpace(uxSignInTextBox.Text) && uxSignInTextBox.Text.Length > 0) || m == null)
             {
-                MessageBox.Show("Email does not exist yet.");
+                MessageBox.Show("Invalid Email Value");
             }
+
             else
             {
-                var library = new Account(m);
-                library.Show();
+                var account = new Account(m);
+                account.Show();
             }
         }
     }
