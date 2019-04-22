@@ -21,7 +21,7 @@ namespace Library_Manager
 
         private void uxSubmit_Click(object sender, EventArgs e)
         {
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
+            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
 
             SqlMemberRepository SqlMem = new SqlMemberRepository(connectionString);
 
@@ -36,17 +36,15 @@ namespace Library_Manager
             }      
             else
             {
-
                 Library2 lib = SqlMem.RetrieveLibraryByName(uxLibraryChoose.GetItemText(uxLibraryChoose.SelectedItem));
+                if (lib == null)
+                    MessageBox.Show("Lib is null");
                 SqlMem.CreateMember(lib.LibraryID, uxFirstNameText.Text.Trim(), uxLastNameText.Text.Trim(),
                     uxEmailText.Text.Trim(), uxPhoneText.Text.Trim());
                 MessageBox.Show("New membership was created for " + uxFirstNameText.Text + " " + uxLastNameText.Text + " at "
                     + uxLibraryChoose.SelectedItem.ToString());
                 Close();
             }
-
-
-
         }
     }
 }

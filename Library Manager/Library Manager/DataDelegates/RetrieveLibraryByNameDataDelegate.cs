@@ -20,7 +20,7 @@ namespace Library_Manager.DataDelegates
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("Name", SqlDbType.NVarChar);
+            var p = command.Parameters.Add("LibraryName", SqlDbType.NVarChar);
             p.Value = Name;
         }
 

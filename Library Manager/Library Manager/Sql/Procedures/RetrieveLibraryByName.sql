@@ -4,4 +4,4 @@ AS
 
 SELECT L.LibraryID, L.[State], L.City
 FROM Libraries.[Library] L
-WHERE L.[Name] = @LibraryName
+WHERE L.Name = @LibraryName

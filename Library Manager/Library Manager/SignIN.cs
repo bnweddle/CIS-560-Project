@@ -28,7 +28,7 @@ namespace Library_Manager
 
         private void uxSignInButton_Click(object sender, EventArgs e)
         {
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
+            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
          
             SqlMemberRepository SqlMem = new SqlMemberRepository(connectionString);
             Member m = SqlMem.GetMemberbyEmail(uxSignInTextBox.Text.Trim());
