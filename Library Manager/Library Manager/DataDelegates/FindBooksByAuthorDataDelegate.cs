@@ -20,6 +20,14 @@ namespace Library_Manager.DataDelegates
             AuthorName = authorName;
         }
 
+        public override void PrepareCommand(SqlCommand command)
+        {
+            base.PrepareCommand(command);
+
+            var p = command.Parameters.Add("AuthorNamePattern", SqlDbType.NVarChar);
+            p.Value = AuthorName;
+        }
+
         public override List<Title> Translate(SqlCommand command, SqlDataReader reader)
         {
             List<Title> list = new List<Title>();

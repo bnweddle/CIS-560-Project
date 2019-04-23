@@ -6,4 +6,4 @@ AS
 SELECT T.TitleID, T.ISBN, T.[Name], A.FullName, T.PublicationYear
 FROM Libraries.Author A
 	INNER JOIN Libraries.Title T ON T.AuthorID = A.AuthorID
-		AND (A.FullName LIKE @AuthorNamePattern)
+		AND (A.FullName LIKE '%' + @AuthorNamePattern + '%')

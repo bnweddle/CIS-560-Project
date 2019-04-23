@@ -33,7 +33,7 @@ namespace Library_Manager.DataDelegates
                     reader.GetInt32(reader.GetOrdinal("TitleID")),
                     reader.GetInt32(reader.GetOrdinal("AuthorID")),
                     reader.GetString(reader.GetOrdinal("ISBN")),
-                    reader.GetString(reader.GetOrdinal("Name")),
+                    TitleName,
                     reader.GetInt32(reader.GetOrdinal("PublicationYear"))));
             }
             return books;
