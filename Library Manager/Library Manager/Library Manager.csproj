@@ -125,6 +125,7 @@
     <None Include="DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache" />
     <None Include="DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache" />
     <None Include="DataAccess\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Properties\DataSources\Account.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

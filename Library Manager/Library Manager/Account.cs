@@ -17,12 +17,17 @@ namespace Library_Manager
         const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
         SqlItemsOutRepository SqlI = new SqlItemsOutRepository(connectionString);
 
+        public BindingList<Title> titleBindingList { get; }
+
         public Member member;
         public Account(Member m)
         {
             member = m;
             InitializeComponent();
-            DisplayCheckedOutBooks(m);
+            titleBindingList = new BindingList<Title>();
+            uxBindingList.DataSource = titleBindingList;
+            uxDataView.DataSource = uxBindingList;
+            //DisplayCheckedOutBooks(m);
         }
 
         public void DisplayCheckedOutBooks(Member m)
@@ -48,6 +53,7 @@ namespace Library_Manager
 
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
+            titleBindingList.Clear();
             const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
             SqlTitleRepository SqlMem = new SqlTitleRepository(connectionString);
 
@@ -56,20 +62,10 @@ namespace Library_Manager
             {
                 List<Title> list = new List<Title>();
                 list = SqlMem.FindBooksByTitle(search);
-                if(list.Count == 0)
-                {
-                    MessageBox.Show("No books found");
-                }
-                else
-                {
-                    uxDataView.Columns.Add("ISBN", "ISBN");
-                    uxDataView.Columns.Add("Title", "Title");
-                    uxDataView.Columns.Add("Published", "Published");
 
-                    foreach (Title t in list)
-                    {
-                        uxDataView.Rows.Add(t.ISBN, t.Name, t.PublicationYear);
-                    }
+                foreach (Title t in list)
+                {
+                   titleBindingList.Add(t);
                 }
                 
             }
@@ -82,6 +78,11 @@ namespace Library_Manager
                 MessageBox.Show("Must select one of the radio buttons");
             }
             
+        }
+
+        private void uxReportButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
