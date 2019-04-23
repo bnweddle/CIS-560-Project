@@ -22,7 +22,7 @@ namespace Library_Manager
         {
             member = m;
             InitializeComponent();
-            DisplayCheckedOutBooks(m);
+            //DisplayCheckedOutBooks(m);
         }
 
         public void DisplayCheckedOutBooks(Member m)
@@ -46,14 +46,40 @@ namespace Library_Manager
 
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
+            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
             SqlTitleRepository SqlMem = new SqlTitleRepository(connectionString);
 
             string search = uxSearchBox.Text;
-            List<Title> list = new List<Title>();
+            if(uxByTitle.Checked == true)
+            {
+                List<Title> list = new List<Title>();
+                list = SqlMem.FindBooksByTitle(search);
+                if(list.Count == 0)
+                {
+                    MessageBox.Show("No books found");
+                }
+                else
+                {
+                    uxDataView.Columns.Add("ISBN", "ISBN");
+                    uxDataView.Columns.Add("Title", "Title");
+                    uxDataView.Columns.Add("Published", "Published");
 
-            list = SqlMem.FindBooksByTitle(search);
-            uxDataView.Columns.Add()
+                    foreach (Title t in list)
+                    {
+                        uxDataView.Rows.Add(t.ISBN, t.Name, t.PublicationYear);
+                    }
+                }
+                
+            }
+            else if(uxByAuthor.Checked == true)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Must select one of the radio buttons");
+            }
+            
         }
     }
 }

@@ -8,11 +8,11 @@ namespace Library_Manager.Models
 {
     class Title
     {
-        int TitleID { get;  }
-        int AuthorID { get; }
-        string ISBN { get;  }
-        string Name { get; }
-        int PublicationYear { get; }
+        public int TitleID { get;  }
+        public int AuthorID { get; }
+        public string ISBN { get;  }
+        public string Name { get; }
+        public int PublicationYear { get; }
 
         internal Title(int titleId, int authorId, string isbn, string name, int pubYear)
         {
