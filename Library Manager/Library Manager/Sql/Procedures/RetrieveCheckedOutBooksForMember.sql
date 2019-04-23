@@ -2,7 +2,7 @@
 	@MemberID INT
 AS
 
-SELECT I.ItemsOutID, I.LibraryID, I.BookID, I.CheckedOutDate, I.DueBackDate, I.ReturnedDate, T.[Name]
+SELECT I.ItemsOutID, M.LibraryID, I.BookID, I.CheckedOutDate, I.DueBackDate, I.ReturnedDate, T.[Name]
 FROM Libraries.ItemsOut I
 	INNER JOIN Libraries.Member M ON M.MemberID = I.MemberID
 		AND M.MemberID = @MemberID

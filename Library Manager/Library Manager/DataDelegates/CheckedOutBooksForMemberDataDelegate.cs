@@ -20,31 +20,29 @@ namespace Library_Manager.DataDelegates
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("MemberId", SqlDbType.Int);
+            var p = command.Parameters.Add("MemberID", SqlDbType.Int);
             p.Value = MemberID;
         }
 
         public override Dictionary<string, ItemsOut> Translate(SqlCommand command, SqlDataReader reader)
         {
-            ItemsOut values;
-            string key;
-            var dict = new Dictionary<string, ItemsOut>();
+            if (!reader.Read())
+                return null;
 
+            ItemsOut values;
+            var dict = new Dictionary<string, ItemsOut>();
             
             while (reader.Read())
             {
-                
-
-
                 values = new ItemsOut(
                    reader.GetInt32(reader.GetOrdinal("ItemsOutID")),
-                   reader.GetInt32(reader.GetOrdinal("LibrayID")),
+                   8, //should be number 8
+                   //reader.GetInt32(reader.GetOrdinal("LibrayID")),
                    MemberID,
                    reader.GetInt32(reader.GetOrdinal("BookID")),
                    reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")),
                    reader.GetDateTime(reader.GetOrdinal("DueBackDate")),
-                   reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")));
-                //key = ;
+                   reader.GetDateTime(reader.GetOrdinal("ReturnedDate")));
 
                 dict.Add(reader.GetString(reader.GetOrdinal("Name")), values);
             }

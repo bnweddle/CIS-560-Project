@@ -14,7 +14,7 @@ namespace Library_Manager
 { 
     public partial class Account : Form
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
+        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
         SqlItemsOutRepository SqlI = new SqlItemsOutRepository(connectionString);
 
         public Member member;
@@ -22,20 +22,22 @@ namespace Library_Manager
         {
             member = m;
             InitializeComponent();
-            //DisplayCheckedOutBooks(m);
+            DisplayCheckedOutBooks(m);
         }
 
         public void DisplayCheckedOutBooks(Member m)
         {
             Dictionary<string, ItemsOut> dict = SqlI.CheckedOutBooksForMember(m.MemberID);
-            
+            List<ItemsOut> values = new List<ItemsOut>();
+            List<string> keys = new List<string>();
+
             if (dict.Count != 0)
             {
                 foreach(KeyValuePair<string, ItemsOut> k in dict)
                 {
-                    uxDataView.Rows.Add(k.Key, k.Value);
+                    values.Add(k.Value);
+                    keys.Add(k.Key);
                 }
-                uxDataView.Refresh();
             }
             else
             {
