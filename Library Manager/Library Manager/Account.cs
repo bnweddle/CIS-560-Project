@@ -15,9 +15,13 @@ namespace Library_Manager
     public partial class Account : Form
     {
         const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
-        SqlItemsOutRepository SqlI = new SqlItemsOutRepository(connectionString);
+        SqlItemsOutRepository SqlItemsOut = new SqlItemsOutRepository(connectionString);
+        SqlTitleRepository SqlTitle = new SqlTitleRepository(connectionString);
+        SqlAuthorRepository SqlAuthor = new SqlAuthorRepository(connectionString);
 
         public BindingList<Title> titleBindingList { get; }
+        public BindingList<string> stringBindingList { get;  }
+        public BindingList<int> intBindingList { get; }
 
         public Member member;
         public Account(Member m)
@@ -25,6 +29,8 @@ namespace Library_Manager
             member = m;
             InitializeComponent();
             titleBindingList = new BindingList<Title>();
+            stringBindingList = new BindingList<string>();
+            intBindingList = new BindingList<int>();
             uxBindingList.DataSource = titleBindingList;
             uxDataView.DataSource = uxBindingList;
             //DisplayCheckedOutBooks(m);
@@ -32,7 +38,7 @@ namespace Library_Manager
 
         public void DisplayCheckedOutBooks(Member m)
         {
-            Dictionary<string, ItemsOut> dict = SqlI.CheckedOutBooksForMember(m.MemberID);
+            Dictionary<string, ItemsOut> dict = SqlItemsOut.CheckedOutBooksForMember(m.MemberID);
             List<ItemsOut> values = new List<ItemsOut>();
             List<string> keys = new List<string>();
 
@@ -53,17 +59,14 @@ namespace Library_Manager
 
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
-            titleBindingList.Clear();
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
-            SqlTitleRepository SqlMem = new SqlTitleRepository(connectionString);
-            SqlAuthorRepository SqlAuthor = new SqlAuthorRepository(connectionString);
+            titleBindingList.Clear();            
             List<Title> list = new List<Title>();
 
             string search = uxSearchBox.Text;
             if(uxByTitle.Checked == true)
             {
                 
-                list = SqlMem.FindBooksByTitle(search);
+                list = SqlTitle.FindBooksByTitle(search);
 
                 foreach (Title t in list)
                 {
@@ -91,12 +94,40 @@ namespace Library_Manager
             //Most popular book
             if(uxReportQueries.SelectedIndex == 0)  
             {
+                IReadOnlyDictionary<int, string> pop = SqlTitle.MostPopularBooks();
+                List<int> keys = new List<int>();
+                List<string> values = new List<string>();
 
+                foreach(KeyValuePair<int, string> k in pop)
+                {
+                    keys.Add(k.Key);
+                    values.Add(k.Value);
+                }
+
+                uxDataView.Columns[0].HeaderText = "Number of Checkouts";
+                uxDataView.Columns[1].HeaderText = "Book Title";
+
+                foreach(string s in values)
+                {
+                    foreach(int i in keys)
+                    {
+                        uxDataView.Rows.Add(i, s);
+                    }
+                }
             }   
 
             //Most popular author
             else if(uxReportQueries.SelectedIndex == 1)
             {
+                IReadOnlyList<string> authors = SqlAuthor.Top10Authors(member.MemberID);
+                //stringBindingList = new BindingList<string>();
+                uxBindingList.DataSource = stringBindingList;
+                uxDataView.DataSource = uxBindingList;
+
+                foreach(string s in authors)
+                {
+                    stringBindingList.Add(s);
+                }
 
             }
 

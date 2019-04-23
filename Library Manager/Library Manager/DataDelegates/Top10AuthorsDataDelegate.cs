@@ -13,10 +13,19 @@ namespace Library_Manager.DataDelegates
 {
     class Top10AuthorsDataDelegate : DataReaderDelegate<IReadOnlyList<string>>
     {
-        public Top10AuthorsDataDelegate()
+        int memID { get; }
+        public Top10AuthorsDataDelegate(int M)
             : base("Libraries.ReportTopTenAuthors")
         {
-            //intentionally left blank
+            memID = M;
+        }
+
+        public override void PrepareCommand(SqlCommand command)
+        {
+            base.PrepareCommand(command);
+
+            var p = command.Parameters.Add("MemberID", SqlDbType.NVarChar);
+            p.Value = memID;
         }
 
         public override IReadOnlyList<string> Translate(SqlCommand command, SqlDataReader reader)
