@@ -14,7 +14,7 @@ namespace Library_Manager
 { 
     public partial class Account : Form
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
+        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
         SqlItemsOutRepository SqlI = new SqlItemsOutRepository(connectionString);
 
         public BindingList<Title> titleBindingList { get; }

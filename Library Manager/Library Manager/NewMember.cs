@@ -21,7 +21,7 @@ namespace Library_Manager
 
         private void uxSubmit_Click(object sender, EventArgs e)
         {
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
+            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
 
             SqlMemberRepository SqlMem = new SqlMemberRepository(connectionString);
 
