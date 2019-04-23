@@ -40,11 +40,11 @@
             this.uxReportQueries = new System.Windows.Forms.ComboBox();
             this.uxSearchButton = new System.Windows.Forms.Button();
             this.uxReportButton = new System.Windows.Forms.Button();
-            this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
-            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publicationYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -143,7 +143,7 @@
             "Most Popular Books",
             "Most Popular Authors",
             "Number Of Books in All",
-            "Over Due Books Past 3 Weeks"});
+            "Over Due Books Past a Month"});
             this.uxReportQueries.Location = new System.Drawing.Point(34, 241);
             this.uxReportQueries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxReportQueries.Name = "uxReportQueries";
@@ -171,10 +171,13 @@
             this.uxReportButton.UseVisualStyleBackColor = true;
             this.uxReportButton.Click += new System.EventHandler(this.uxReportButton_Click);
             // 
-            // uxBindingList
+            // Column1
             // 
-            this.uxBindingList.DataMember = "titleBindingList";
-            this.uxBindingList.DataSource = typeof(Library_Manager.Account);
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "TitleID";
+            this.Column1.HeaderText = "TitleID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // iSBNDataGridViewTextBoxColumn
             // 
@@ -183,14 +186,6 @@
             this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
             this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
             this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "TitleID";
-            this.Column1.HeaderText = "TitleID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -207,6 +202,11 @@
             this.publicationYearDataGridViewTextBoxColumn.HeaderText = "PublicationYear";
             this.publicationYearDataGridViewTextBoxColumn.Name = "publicationYearDataGridViewTextBoxColumn";
             this.publicationYearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uxBindingList
+            // 
+            this.uxBindingList.DataMember = "titleBindingList";
+            this.uxBindingList.DataSource = typeof(Library_Manager.Account);
             // 
             // Account
             // 
