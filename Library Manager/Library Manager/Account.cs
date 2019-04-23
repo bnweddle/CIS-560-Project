@@ -56,11 +56,13 @@ namespace Library_Manager
             titleBindingList.Clear();
             const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
             SqlTitleRepository SqlMem = new SqlTitleRepository(connectionString);
+            SqlAuthorRepository SqlAuthor = new SqlAuthorRepository(connectionString);
+            List<Title> list = new List<Title>();
 
             string search = uxSearchBox.Text;
             if(uxByTitle.Checked == true)
             {
-                List<Title> list = new List<Title>();
+                
                 list = SqlMem.FindBooksByTitle(search);
 
                 foreach (Title t in list)
@@ -71,7 +73,11 @@ namespace Library_Manager
             }
             else if(uxByAuthor.Checked == true)
             {
-
+                list = SqlAuthor.FindBooksByAuthor(search);
+                foreach (Title t in list)
+                {
+                    titleBindingList.Add(t);
+                }
             }
             else
             {
