@@ -40,8 +40,12 @@
             this.uxReportQueries = new System.Windows.Forms.ComboBox();
             this.uxSearchButton = new System.Windows.Forms.Button();
             this.uxReportButton = new System.Windows.Forms.Button();
-            this.authorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
+            this.authorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +55,11 @@
             this.uxDataView.AutoGenerateColumns = false;
             this.uxDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uxDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.authorIDDataGridViewTextBoxColumn});
+            this.authorIDDataGridViewTextBoxColumn,
+            this.FirstName,
+            this.LastName,
+            this.MiddleName,
+            this.FullName});
             this.uxDataView.DataSource = this.uxBindingList;
             this.uxDataView.Location = new System.Drawing.Point(431, 70);
             this.uxDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -166,6 +174,11 @@
             this.uxReportButton.UseVisualStyleBackColor = true;
             this.uxReportButton.Click += new System.EventHandler(this.uxReportButton_Click);
             // 
+            // uxBindingList
+            // 
+            this.uxBindingList.DataMember = "authorBindingList";
+            this.uxBindingList.DataSource = typeof(Library_Manager.Account);
+            // 
             // authorIDDataGridViewTextBoxColumn
             // 
             this.authorIDDataGridViewTextBoxColumn.DataPropertyName = "AuthorID";
@@ -173,10 +186,33 @@
             this.authorIDDataGridViewTextBoxColumn.Name = "authorIDDataGridViewTextBoxColumn";
             this.authorIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // uxBindingList
+            // FirstName
             // 
-            this.uxBindingList.DataMember = "authorBindingList";
-            this.uxBindingList.DataSource = typeof(Library_Manager.Account);
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "LastName";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // MiddleName
+            // 
+            this.MiddleName.DataPropertyName = "MiddleName";
+            this.MiddleName.HeaderText = "MiddleName";
+            this.MiddleName.Name = "MiddleName";
+            this.MiddleName.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "FullName";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             // 
             // Account
             // 
@@ -220,5 +256,9 @@
         private System.Windows.Forms.Button uxReportButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
     }
 }
