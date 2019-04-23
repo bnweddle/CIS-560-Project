@@ -54,7 +54,7 @@ namespace Library_Manager
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
             titleBindingList.Clear();
-            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
+            const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
             SqlTitleRepository SqlMem = new SqlTitleRepository(connectionString);
             SqlAuthorRepository SqlAuthor = new SqlAuthorRepository(connectionString);
             List<Title> list = new List<Title>();
@@ -88,7 +88,33 @@ namespace Library_Manager
 
         private void uxReportButton_Click(object sender, EventArgs e)
         {
+            //Most popular book
+            if(uxReportQueries.SelectedIndex == 0)  
+            {
 
+            }   
+
+            //Most popular author
+            else if(uxReportQueries.SelectedIndex == 1)
+            {
+
+            }
+
+            //Number of books in all
+            else if (uxReportQueries.SelectedIndex == 2)
+            {
+
+            }
+            //Overdue Books past a Month
+            else if (uxReportQueries.SelectedIndex == 3)
+            {
+
+            }
+
+            else //No report was selected
+            {
+                MessageBox.Show("Need to select a report.");
+            }
         }
     }
 }
