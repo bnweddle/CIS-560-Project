@@ -17,8 +17,6 @@ namespace Library_Manager.Models
         DateTime DueDate { get; set; }
         DateTime ReturnedDate { get; set; }
 
-        public BindingList<ItemsOut> list { get; }
-
         internal ItemsOut(int IID, int LID, int MID, int BID, DateTime COD, DateTime DD, DateTime RD)
         {
             ItemsOutID = IID;

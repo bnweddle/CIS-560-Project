@@ -27,7 +27,7 @@ namespace Library_Manager.Repositories
             return executor.ExecuteReader(d); //prodecure has OUTPUT parameters
         }
 
-        public IReadOnlyList<string> Top10Authors(int mem)
+        public IReadOnlyList<Author> Top10Authors(int mem)
         {
             var d = new Top10AuthorsDataDelegate(mem);
             return executor.ExecuteReader(d); //prodecure has OUTPUT parameters

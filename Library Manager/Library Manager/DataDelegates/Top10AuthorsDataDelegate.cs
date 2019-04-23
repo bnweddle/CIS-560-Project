@@ -11,7 +11,7 @@ using Library_Manager.Models;
 
 namespace Library_Manager.DataDelegates
 {
-    class Top10AuthorsDataDelegate : DataReaderDelegate<IReadOnlyList<string>>
+    class Top10AuthorsDataDelegate : DataReaderDelegate<IReadOnlyList<Author>>
     {
         int memID { get; }
         public Top10AuthorsDataDelegate(int M)
@@ -28,17 +28,20 @@ namespace Library_Manager.DataDelegates
             p.Value = memID;
         }
 
-        public override IReadOnlyList<string> Translate(SqlCommand command, SqlDataReader reader)
+        public override IReadOnlyList<Author> Translate(SqlCommand command, SqlDataReader reader)
         {
-            List<string> list = new List<string>();
-            IReadOnlyList<string> listFinished;
+            List <Author> authors = new List<Author>();
 
             while (reader.Read())
             {
-                list.Add(reader.GetString(reader.GetOrdinal("FirstName")) + reader.GetString(reader.GetOrdinal("MiddleName")) + reader.GetString(reader.GetOrdinal("LastName")));
+                authors.Add(new Author(
+                    reader.GetInt32(reader.GetOrdinal("AuthorID")),
+                    reader.GetString(reader.GetOrdinal("FirstName")),
+                    reader.GetString(reader.GetOrdinal("MiddleName")),
+                    reader.GetString(reader.GetOrdinal("LastName")),
+                    reader.GetString(reader.GetOrdinal("FullName"))));
             }
-            listFinished = list;
-            return listFinished;
+            return authors;
         }
     }
 }

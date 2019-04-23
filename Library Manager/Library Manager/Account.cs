@@ -14,14 +14,13 @@ namespace Library_Manager
 { 
     public partial class Account : Form
     {
-        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;Integrated Security=SSPI;";
+        const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
         SqlItemsOutRepository SqlItemsOut = new SqlItemsOutRepository(connectionString);
         SqlTitleRepository SqlTitle = new SqlTitleRepository(connectionString);
         SqlAuthorRepository SqlAuthor = new SqlAuthorRepository(connectionString);
 
         public BindingList<Title> titleBindingList { get; }
-        public BindingList<string> stringBindingList { get;  }
-        public BindingList<int> intBindingList { get; }
+        public BindingList<Author> authorBindingList { get;  }
 
         public Member member;
         public Account(Member m)
@@ -29,8 +28,7 @@ namespace Library_Manager
             member = m;
             InitializeComponent();
             titleBindingList = new BindingList<Title>();
-            stringBindingList = new BindingList<string>();
-            intBindingList = new BindingList<int>();
+            authorBindingList = new BindingList<Author>();
             uxBindingList.DataSource = titleBindingList;
             uxDataView.DataSource = uxBindingList;
             //DisplayCheckedOutBooks(m);
@@ -91,8 +89,9 @@ namespace Library_Manager
 
         private void uxReportButton_Click(object sender, EventArgs e)
         {
+            titleBindingList.Clear();
             //Most popular book
-            if(uxReportQueries.SelectedIndex == 0)  
+            if (uxReportQueries.SelectedIndex == 0)  
             {
                 IReadOnlyDictionary<int, string> pop = SqlTitle.MostPopularBooks();
                 List<int> keys = new List<int>();
@@ -119,14 +118,14 @@ namespace Library_Manager
             //Most popular author
             else if(uxReportQueries.SelectedIndex == 1)
             {
-                IReadOnlyList<string> authors = SqlAuthor.Top10Authors(member.MemberID);
+                IReadOnlyList<Author> authors = SqlAuthor.Top10Authors(member.MemberID);
                 //stringBindingList = new BindingList<string>();
-                uxBindingList.DataSource = stringBindingList;
+                uxBindingList.DataSource = authorBindingList;
                 uxDataView.DataSource = uxBindingList;
 
-                foreach(string s in authors)
+                foreach(Author a in authors)
                 {
-                    stringBindingList.Add(s);
+                    authorBindingList.Add(a);
                 }
 
             }
