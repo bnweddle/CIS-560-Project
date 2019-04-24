@@ -84,6 +84,12 @@
     <Compile Include="NewMember.Designer.cs">
       <DependentUpon>NewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Repositories\IAuthorRepository.cs" />
     <Compile Include="Repositories\IItemsOutRepository.cs" />
@@ -93,6 +99,12 @@
     <Compile Include="Repositories\SqlItemsOutRepository.cs" />
     <Compile Include="Repositories\SqlMemberRepository.cs" />
     <Compile Include="Repositories\SqlTitleRepository.cs" />
+    <Compile Include="Search Engine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search Engine.Designer.cs">
+      <DependentUpon>Search Engine.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +116,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewMember.resx">
       <DependentUpon>NewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search Engine.resx">
+      <DependentUpon>Search Engine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
@@ -126,6 +144,7 @@
     <None Include="DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache" />
     <None Include="DataAccess\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\DataSources\Account.datasource" />
+    <None Include="Properties\DataSources\Search_Engine.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -9,10 +9,12 @@ namespace Library_Manager.DataDelegates
     internal class FindBookByTitleDataDelegate : DataReaderDelegate<List<Title>>
     {
         string TitleName { get; }
+        int memberID { get; }
 
-        public FindBookByTitleDataDelegate(string titleName) : base("Libraries.FindBooksByTitle")
+        public FindBookByTitleDataDelegate(string titleName, int mem) : base("Libraries.FindBooksByTitle")
         {
             TitleName = titleName;
+            memberID = mem;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -21,6 +23,9 @@ namespace Library_Manager.DataDelegates
 
             var p = command.Parameters.Add("TitleNamePattern", SqlDbType.NVarChar);
             p.Value = TitleName;
+
+            p = command.Parameters.Add("MemberID", SqlDbType.Int);
+            p.Value = memberID;
         }
 
         public override List<Title> Translate(SqlCommand command, SqlDataReader reader)

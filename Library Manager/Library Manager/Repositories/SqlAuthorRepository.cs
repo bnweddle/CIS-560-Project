@@ -18,12 +18,12 @@ namespace Library_Manager.Repositories
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public List<Title> FindBooksByAuthor(string authorName)
+        public List<Title> FindBooksByAuthor(string authorName, int memberID)
         {
              if (string.IsNullOrWhiteSpace(authorName))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(authorName));
 
-            var d = new FindBooksByAuthorDataDelegate(authorName);
+            var d = new FindBooksByAuthorDataDelegate(authorName, memberID);
             return executor.ExecuteReader(d); //prodecure has OUTPUT parameters
         }
 

@@ -29,8 +29,6 @@ namespace Library_Manager
             InitializeComponent();
             titleBindingList = new BindingList<Title>();
             authorBindingList = new BindingList<Author>();
-            uxBindingList.DataSource = titleBindingList;
-            uxDataView.DataSource = uxBindingList;
             //DisplayCheckedOutBooks(m);
         }
 
@@ -57,14 +55,16 @@ namespace Library_Manager
 
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
-            titleBindingList.Clear();            
+            titleBindingList.Clear();
+            uxBindingList.DataSource = titleBindingList;
+            uxDataView.DataSource = uxBindingList;
             List<Title> list = new List<Title>();
 
             string search = uxSearchBox.Text;
             if(uxByTitle.Checked == true)
             {
                 
-                list = SqlTitle.FindBooksByTitle(search);
+               list = SqlTitle.FindBooksByTitle(search, member.MemberID);
 
                 foreach (Title t in list)
                 {
@@ -74,7 +74,7 @@ namespace Library_Manager
             }
             else if(uxByAuthor.Checked == true)
             {
-                list = SqlAuthor.FindBooksByAuthor(search);
+                list = SqlAuthor.FindBooksByAuthor(search, member.MemberID);
                 foreach (Title t in list)
                 {
                     titleBindingList.Add(t);
@@ -118,12 +118,19 @@ namespace Library_Manager
             //Most popular author
             else if(uxReportQueries.SelectedIndex == 1)
             {
+                authorBindingList.Clear();
+                DataGridViewColumn col = new DataGridViewTextBoxColumn();
                 IReadOnlyList<Author> authors = SqlAuthor.Top10Authors(member.MemberID);
-                //stringBindingList = new BindingList<string>();
                 uxBindingList.DataSource = authorBindingList;
                 uxDataView.DataSource = uxBindingList;
+    
+      
+                col.DataPropertyName = "FullName";
+                col.HeaderText = "Full Name";
+                col.Name = "FullName";
+                uxDataView.Columns.Add(col);
 
-                foreach(Author a in authors)
+                foreach (Author a in authors)
                 {
                     authorBindingList.Add(a);
                 }

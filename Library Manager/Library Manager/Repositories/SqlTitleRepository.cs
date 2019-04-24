@@ -15,12 +15,12 @@ namespace Library_Manager.Repositories
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public List<Title> FindBooksByTitle(string titleName)
+        public List<Title> FindBooksByTitle(string titleName, int memberId)
         {
             if (string.IsNullOrWhiteSpace(titleName))
                 throw new ArgumentException("The parameter cannot be null or empty.", nameof(titleName));
 
-            var d = new FindBookByTitleDataDelegate(titleName);
+            var d = new FindBookByTitleDataDelegate(titleName, memberId);
             return executor.ExecuteReader(d);
         }
 

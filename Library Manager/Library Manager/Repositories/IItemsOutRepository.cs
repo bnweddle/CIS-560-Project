@@ -10,6 +10,6 @@ namespace Library_Manager.Repositories
         //Member should be able to select from list to return one of them
         Dictionary<string, ItemsOut> CheckedOutBooksForMember(int memberID);
 
-        void UpdateReturnDate(int ItemOutId);
+        void UpdateReturnDate(int titleId);
     }
 }
