@@ -11,5 +11,8 @@ namespace Library_Manager.Repositories
         List<ItemsOut> CheckedOutBooksForMember(int memberID);
 
         void UpdateReturnDate(int itemsOutId);
+
+        IReadOnlyList<OverDue> OverDueBooks();
+
     }
 }

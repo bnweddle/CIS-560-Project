@@ -31,5 +31,11 @@ namespace Library_Manager.Repositories
             var d = new ReturnBookDataDelegate(itemsOutId);
             executor.ExecuteNonQuery(d);
         }
+
+        public IReadOnlyList<OverDue> OverDueBooks()
+        {
+            var d = new OverDueDataDelegate();
+            return executor.ExecuteReader(d);
+        }
     }
 }

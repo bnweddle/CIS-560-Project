@@ -69,6 +69,7 @@
     <Compile Include="DataDelegates\GetMemberbyEmailDataDelegate.cs" />
     <Compile Include="DataDelegates\MostPopularBooksDataDelegate.cs" />
     <Compile Include="DataDelegates\NumberOfBooksDataDelegate.cs" />
+    <Compile Include="DataDelegates\OverDueDataDelegate.cs" />
     <Compile Include="DataDelegates\RetrieveLibraryByNameDataDelegate.cs" />
     <Compile Include="DataDelegates\ReturnBookDataDelegate.cs" />
     <Compile Include="DataDelegates\Top10AuthorsDataDelegate.cs" />
@@ -83,6 +84,7 @@
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Member.cs" />
+    <Compile Include="Models\OverDue.cs" />
     <Compile Include="Models\Title.cs" />
     <Compile Include="NewMember.cs">
       <SubType>Form</SubType>

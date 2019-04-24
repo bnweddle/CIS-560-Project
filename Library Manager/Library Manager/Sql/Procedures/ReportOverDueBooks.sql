@@ -1,8 +1,7 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.OverDueBooks
-
-@CurrentDate DATETIME
-
 AS
+
+DECLARE @CurrentDate DATETIME =  SYSDATETIMEOFFSET();
 WITH CteSource (BookName, MemberID, CheckedOutDate, DueBackDate, Diff) AS (
 	SELECT T.[Name] AS BookName, IT.MemberID, IT.CheckedOutDate, IT.DueBackDate,
 		DATEDIFF(day,IT.DueBackDate, @CurrentDate) AS Diff
@@ -12,12 +11,10 @@ WITH CteSource (BookName, MemberID, CheckedOutDate, DueBackDate, Diff) AS (
 	WHERE IT.DueBackDate < @CurrentDate
 		AND IT.ReturnedDate IS NULL
 )
-SELECT C.BookName, C.MemberID, C.CheckedOutDate, C.DueBackDate
+SELECT C.BookName, C.MemberID, C.CheckedOutDate, C.DueBackDate, C.Diff
 FROM CteSource C 
 WHERE Diff > 31
 ORDER BY C.DueBackDate
-
-SET @CurrentDate = SYSDATETIMEOFFSET()
 
 --REPORT QUERY
 --Returns the name of the book that has not been returned for over a month of when it was dues back,
