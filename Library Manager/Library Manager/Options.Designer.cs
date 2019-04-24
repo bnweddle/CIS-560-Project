@@ -62,6 +62,7 @@
             this.uxReportButton.TabIndex = 14;
             this.uxReportButton.Text = "Report";
             this.uxReportButton.UseVisualStyleBackColor = true;
+            this.uxReportButton.Click += new System.EventHandler(this.uxReportButton_Click);
             // 
             // uxReportQueries
             // 

@@ -15,7 +15,6 @@ namespace Library_Manager
         SqlAuthorRepository SqlAuthor = new SqlAuthorRepository(connectionString);
 
         public BindingList<Title> titleBindingList { get; }
-        public BindingList<Author> authorBindingList { get; }
 
         public Member member;
         public Search_Engine(Member m)
