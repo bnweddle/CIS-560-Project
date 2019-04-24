@@ -78,26 +78,7 @@ namespace Library_Manager
             //Most popular book
             if (uxReportQueries.SelectedIndex == 0)  
             {
-                IReadOnlyDictionary<int, string> pop = SqlTitle.MostPopularBooks();
-                List<int> keys = new List<int>();
-                List<string> values = new List<string>();
-
-                foreach(KeyValuePair<int, string> k in pop)
-                {
-                    keys.Add(k.Key);
-                    values.Add(k.Value);
-                }
-
-                uxDataView.Columns[0].HeaderText = "Number of Checkouts";
-                uxDataView.Columns[1].HeaderText = "Book Title";
-
-                foreach(string s in values)
-                {
-                    foreach(int i in keys)
-                    {
-                        uxDataView.Rows.Add(i, s);
-                    }
-                }
+                IReadOnlyList<Popular> pop = SqlTitle.MostPopularBooks();
             }   
 
             //Most popular author

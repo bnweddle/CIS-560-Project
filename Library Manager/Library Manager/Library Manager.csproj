@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\OverDue.cs" />
+    <Compile Include="Models\Popular.cs" />
     <Compile Include="Models\Title.cs" />
     <Compile Include="NewMember.cs">
       <SubType>Form</SubType>

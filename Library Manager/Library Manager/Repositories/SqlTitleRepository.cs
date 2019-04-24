@@ -24,7 +24,7 @@ namespace Library_Manager.Repositories
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyDictionary<int, string> MostPopularBooks()
+        public IReadOnlyList<Popular> MostPopularBooks()
         {
             var d = new MostPopularBooksDataDelegate();
             return executor.ExecuteReader(d);

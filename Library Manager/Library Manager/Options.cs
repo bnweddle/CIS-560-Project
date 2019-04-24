@@ -14,11 +14,15 @@ namespace Library_Manager
     public partial class Options : Form
     {
         public BindingList<Author> authors;
+        public BindingList<Popular> popular;
+        public BindingList<OverDue> overdue;
         public Member member;
         public Options(Member m)
         {
             member = m;
             authors = new BindingList<Author>();
+            popular = new BindingList<Popular>();
+            overdue = new BindingList<OverDue>();
             InitializeComponent();
         }
 
@@ -33,7 +37,8 @@ namespace Library_Manager
             //Most popular book
             if (uxReportQueries.SelectedIndex == 0)
             {
-
+                var reports = new Reports(0, popular, member);
+                reports.Show();
             }
 
             //Most popular author
@@ -52,7 +57,8 @@ namespace Library_Manager
             //Overdue Books past a Month
             else if (uxReportQueries.SelectedIndex == 3)
             {
-
+                var reports = new Reports(3, overdue, member);
+                reports.Show();
             }
 
             else //No report was selected

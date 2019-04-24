@@ -6,26 +6,24 @@ using System.Collections.Generic;
 
 namespace Library_Manager.DataDelegates
 {
-    internal class MostPopularBooksDataDelegate : DataReaderDelegate<IReadOnlyDictionary<int, string>>
+    internal class MostPopularBooksDataDelegate : DataReaderDelegate<IReadOnlyList<Popular>>
     {
         public MostPopularBooksDataDelegate() : base ("Libraries.ReportMostPopularBooks")
         {
         }
 
-        public override IReadOnlyDictionary<int, string> Translate(SqlCommand command, SqlDataReader reader)
+        public override IReadOnlyList<Popular> Translate(SqlCommand command, SqlDataReader reader)
         {
-            int NumofChecks;
-            string NameofBooks;
-
-            var dict = new Dictionary<int, string>();
+            List<Popular> pop = new List<Popular>();
 
             while(reader.Read()){
-                NumofChecks = reader.GetInt32(reader.GetOrdinal("NumOfCheckOuts"));
-                NameofBooks = reader.GetString(reader.GetOrdinal("Name"));
-
-                dict.Add(NumofChecks, NameofBooks);
+                pop.Add(new Popular(
+                    reader.GetInt32(reader.GetOrdinal("NumOfCheckOuts")),
+                    reader.GetString(reader.GetOrdinal("Name")),
+                    reader.GetDateTime(reader.GetOrdinal("LastCheckedOut")),
+                    reader.GetInt32(reader.GetOrdinal("NewerBooks"))));
             }
-            return dict;
+            return pop;
         }       
 	}
 }
