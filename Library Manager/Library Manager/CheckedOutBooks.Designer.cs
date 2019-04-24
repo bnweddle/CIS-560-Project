@@ -32,6 +32,7 @@
             this.uxReturnButton = new System.Windows.Forms.Button();
             this.uxDataView = new System.Windows.Forms.DataGridView();
             this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
+            this.uxTitleID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.uxReturnButton.TabIndex = 21;
             this.uxReturnButton.Text = "Return Book";
             this.uxReturnButton.UseVisualStyleBackColor = true;
+            this.uxReturnButton.Click += new System.EventHandler(this.uxReturnButton_Click);
             // 
             // uxDataView
             // 
@@ -55,16 +57,25 @@
             this.uxDataView.Name = "uxDataView";
             this.uxDataView.Size = new System.Drawing.Size(753, 348);
             this.uxDataView.TabIndex = 20;
+            this.uxDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uxDataView_CellContentClick);
             // 
             // uxBindingList
             // 
             this.uxBindingList.DataSource = typeof(Library_Manager.CheckedOutBooks);
+            // 
+            // uxTitleID
+            // 
+            this.uxTitleID.Location = new System.Drawing.Point(496, 395);
+            this.uxTitleID.Name = "uxTitleID";
+            this.uxTitleID.Size = new System.Drawing.Size(111, 22);
+            this.uxTitleID.TabIndex = 22;
             // 
             // CheckedOutBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uxTitleID);
             this.Controls.Add(this.uxReturnButton);
             this.Controls.Add(this.uxDataView);
             this.Name = "CheckedOutBooks";
@@ -72,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -80,5 +92,6 @@
         private System.Windows.Forms.Button uxReturnButton;
         private System.Windows.Forms.DataGridView uxDataView;
         private System.Windows.Forms.BindingSource uxBindingList;
+        private System.Windows.Forms.TextBox uxTitleID;
     }
 }

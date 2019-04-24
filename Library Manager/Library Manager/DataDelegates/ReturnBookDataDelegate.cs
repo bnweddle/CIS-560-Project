@@ -8,19 +8,19 @@ namespace Library_Manager.DataDelegates
 {
     internal class ReturnBookDataDelegate : DataDelegate
     {
-        int TitleID { get;  }
-        public ReturnBookDataDelegate(int TID)
+        int ItemsOutID { get;  }
+        public ReturnBookDataDelegate(int IID)
         : base("Libraries.UpdateReturnDate")
         {
-            TitleID = TID;
+            ItemsOutID = IID;
         }
 
         public override void PrepareCommand(SqlCommand command)
         {
             base.PrepareCommand(command);
 
-            var p = command.Parameters.Add("TitleID", SqlDbType.Int);
-            p.Value = TitleID;
+            var p = command.Parameters.Add("ItemsOutID", SqlDbType.Int);
+            p.Value = ItemsOutID;
         }
     }
 }

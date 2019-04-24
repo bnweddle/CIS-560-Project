@@ -47,5 +47,19 @@ namespace Library_Manager
             }
             
         }
+
+        private void uxDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            uxReturnButton.Enabled = true;
+            DataGridViewRow rows = this.uxDataView.Rows[e.RowIndex];
+            uxTitleID.Text = rows.Cells["ItemsOutID"].Value.ToString();
+        }
+
+        private void uxReturnButton_Click(object sender, EventArgs e)
+        {
+            int itemsId = Convert.ToInt32(uxTitleID.Text);
+            SqlItemsOut.UpdateReturnDate(itemsId);
+            uxDataView.Refresh();
+        }
     }
 }
