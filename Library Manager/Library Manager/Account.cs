@@ -34,22 +34,7 @@ namespace Library_Manager
 
         public void DisplayCheckedOutBooks(Member m)
         {
-            Dictionary<string, ItemsOut> dict = SqlItemsOut.CheckedOutBooksForMember(m.MemberID);
-            List<ItemsOut> values = new List<ItemsOut>();
-            List<string> keys = new List<string>();
-
-            if (dict.Count != 0)
-            {
-                foreach(KeyValuePair<string, ItemsOut> k in dict)
-                {
-                    values.Add(k.Value);
-                    keys.Add(k.Key);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No books checked out");
-            }
+            List<ItemsOut> values = SqlItemsOut.CheckedOutBooksForMember(m.MemberID);
             
         }
 

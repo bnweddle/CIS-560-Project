@@ -3,10 +3,11 @@ using System.Data;
 using System.Data.SqlClient;
 using Library_Manager.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Library_Manager.DataDelegates
 {
-    internal class CheckedOutBooksForMemberDataDelegate : DataReaderDelegate<Dictionary<string, ItemsOut>>
+    internal class CheckedOutBooksForMemberDataDelegate : DataReaderDelegate<List<ItemsOut>>
     {
         int MemberID { get; }
 
@@ -24,30 +25,30 @@ namespace Library_Manager.DataDelegates
             p.Value = MemberID;
         }
 
-        public override Dictionary<string, ItemsOut> Translate(SqlCommand command, SqlDataReader reader)
+        public override List<ItemsOut> Translate(SqlCommand command, SqlDataReader reader)
         {
             if (!reader.Read())
                 return null;
 
-            ItemsOut values;
-            var dict = new Dictionary<string, ItemsOut>();
-            
+            List<ItemsOut> items = new List<ItemsOut>();
+
             while (reader.Read())
             {
-                values = new ItemsOut(
+                items.Add(new ItemsOut(
                    reader.GetInt32(reader.GetOrdinal("ItemsOutID")),
-                   8, //should be number 8
-                   //reader.GetInt32(reader.GetOrdinal("LibrayID")),
+                   reader.GetInt32(reader.GetOrdinal("LibraryID")),
                    MemberID,
                    reader.GetInt32(reader.GetOrdinal("BookID")),
+                   reader.GetString(reader.GetOrdinal("Name")),
                    reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")),
                    reader.GetDateTime(reader.GetOrdinal("DueBackDate")),
-                   reader.GetDateTime(reader.GetOrdinal("DueBackDate")));
+                   reader.IsDBNull(reader.GetOrdinal("ReturnedDate"))
+                      ? (DateTime?)null
+                      : reader.GetDateTime(reader.GetOrdinal("ReturnedDate"))));
 
-                dict.Add(reader.GetString(reader.GetOrdinal("Name")), values);
             }
 
-            return dict;
+            return items;
         }
     }
 }

@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckedOutBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckedOutBooks.Designer.cs">
+      <DependentUpon>CheckedOutBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\DataDelegate.cs" />
     <Compile Include="DataAccess\DataReaderDelegate.cs" />
     <Compile Include="DataAccess\IDataDelegate.cs" />
@@ -120,6 +126,9 @@
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CheckedOutBooks.resx">
+      <DependentUpon>CheckedOutBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewMember.resx">
       <DependentUpon>NewMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +162,7 @@
     <None Include="DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache" />
     <None Include="DataAccess\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Properties\DataSources\Account.datasource" />
+    <None Include="Properties\DataSources\CheckedOutBooks.datasource" />
     <None Include="Properties\DataSources\Search_Engine.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

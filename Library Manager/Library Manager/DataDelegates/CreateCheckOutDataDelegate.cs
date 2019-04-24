@@ -33,6 +33,9 @@ namespace Library_Manager.DataDelegates
             p = command.Parameters.Add("BookID", SqlDbType.Int);
             p.Value = BookID;
 
+            p = command.Parameters.Add("Title", SqlDbType.NVarChar);
+            p.Direction = ParameterDirection.Output;
+
             p = command.Parameters.Add("ItemsOutID", SqlDbType.Int);
             p.Direction = ParameterDirection.Output;
 
@@ -48,9 +51,11 @@ namespace Library_Manager.DataDelegates
 
         public override ItemsOut Translate(SqlCommand command)
         {
-            return new ItemsOut((int)command.Parameters["ItemsOutID"].Value, LibraryID, 
+            return new ItemsOut((int)command.Parameters["ItemsOutID"].Value, LibraryID,
                 MemberID,
-                BookID, (DateTime)command.Parameters["CheckedOutDate"].Value, 
+                BookID,
+                (string)command.Parameters["Title"].Value,
+                (DateTime)command.Parameters["CheckedOutDate"].Value, 
                 (DateTime)command.Parameters["DueBackDate"].Value, 
                 (DateTime)command.Parameters["ReturnedDate"].Value);
         }

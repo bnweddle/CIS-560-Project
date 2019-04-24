@@ -60,5 +60,11 @@ namespace Library_Manager
                 MessageBox.Show("Need to select a report.");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var books = new CheckedOutBooks(member);
+            books.Show();
+        }
     }
 }

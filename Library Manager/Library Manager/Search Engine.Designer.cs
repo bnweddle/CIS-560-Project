@@ -35,8 +35,8 @@
             this.uxSearchBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.uxDataView = new System.Windows.Forms.DataGridView();
-            this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
             this.uxCheckOutButton = new System.Windows.Forms.Button();
+            this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -102,13 +102,9 @@
             this.uxDataView.Size = new System.Drawing.Size(753, 348);
             this.uxDataView.TabIndex = 12;
             // 
-            // uxBindingList
-            // 
-            this.uxBindingList.DataMember = "titleBindingList";
-            this.uxBindingList.DataSource = typeof(Library_Manager.Search_Engine);
-            // 
             // uxCheckOutButton
             // 
+            this.uxCheckOutButton.Enabled = false;
             this.uxCheckOutButton.Location = new System.Drawing.Point(622, 487);
             this.uxCheckOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxCheckOutButton.Name = "uxCheckOutButton";
@@ -116,7 +112,11 @@
             this.uxCheckOutButton.TabIndex = 19;
             this.uxCheckOutButton.Text = "Check Out Book";
             this.uxCheckOutButton.UseVisualStyleBackColor = true;
-            this.uxCheckOutButton.Visible = false;
+            // 
+            // uxBindingList
+            // 
+            this.uxBindingList.DataMember = "titleBindingList";
+            this.uxBindingList.DataSource = typeof(Library_Manager.Search_Engine);
             // 
             // Search_Engine
             // 
@@ -131,7 +131,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.uxDataView);
             this.Name = "Search_Engine";
-            this.Text = "Search_Engine";
+            this.Text = "Search Engine";
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).EndInit();
             this.ResumeLayout(false);

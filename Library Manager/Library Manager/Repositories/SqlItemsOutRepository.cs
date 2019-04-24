@@ -20,7 +20,7 @@ namespace Library_Manager.Repositories
             return executor.ExecuteNonQuery(d); //prodecure has OUTPUT parameters
         }
 
-        public Dictionary<string, ItemsOut> CheckedOutBooksForMember(int memberID)
+        public List<ItemsOut> CheckedOutBooksForMember(int memberID)
         {
             var d = new CheckedOutBooksForMemberDataDelegate(memberID);
             return executor.ExecuteReader(d); 
