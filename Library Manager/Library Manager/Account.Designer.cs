@@ -40,12 +40,12 @@
             this.uxReportQueries = new System.Windows.Forms.ComboBox();
             this.uxSearchButton = new System.Windows.Forms.Button();
             this.uxReportButton = new System.Windows.Forms.Button();
-            this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
             this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.publicationYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -174,11 +174,6 @@
             this.uxReportButton.UseVisualStyleBackColor = true;
             this.uxReportButton.Click += new System.EventHandler(this.uxReportButton_Click);
             // 
-            // uxBindingList
-            // 
-            this.uxBindingList.DataMember = "titleBindingList";
-            this.uxBindingList.DataSource = typeof(Library_Manager.Account);
-            // 
             // titleIDDataGridViewTextBoxColumn
             // 
             this.titleIDDataGridViewTextBoxColumn.DataPropertyName = "TitleID";
@@ -213,6 +208,11 @@
             this.publicationYearDataGridViewTextBoxColumn.HeaderText = "PublicationYear";
             this.publicationYearDataGridViewTextBoxColumn.Name = "publicationYearDataGridViewTextBoxColumn";
             this.publicationYearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // uxBindingList
+            // 
+            this.uxBindingList.DataMember = "titleBindingList";
+            this.uxBindingList.DataSource = typeof(Library_Manager.Account);
             // 
             // Account
             // 

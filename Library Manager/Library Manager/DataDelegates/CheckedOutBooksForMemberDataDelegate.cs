@@ -42,7 +42,7 @@ namespace Library_Manager.DataDelegates
                    reader.GetInt32(reader.GetOrdinal("BookID")),
                    reader.GetDateTime(reader.GetOrdinal("CheckedOutDate")),
                    reader.GetDateTime(reader.GetOrdinal("DueBackDate")),
-                   reader.GetDateTime(reader.GetOrdinal("ReturnedDate")));
+                   reader.GetDateTime(reader.GetOrdinal("DueBackDate")));
 
                 dict.Add(reader.GetString(reader.GetOrdinal("Name")), values);
             }

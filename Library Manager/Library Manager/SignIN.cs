@@ -39,8 +39,10 @@ namespace Library_Manager
 
             else
             {
-                var account = new Account(m);
-                account.Show();
+                /*var account = new Account(m);
+                account.Show();*/
+                var options = new Options(m);
+                options.Show();
             }
         }
     }

@@ -14,10 +14,13 @@ namespace Library_Manager.DataDelegates
     class FindBooksByAuthorDataDelegate : DataReaderDelegate<List<Title>>
     {
         string AuthorName { get; } 
-        public FindBooksByAuthorDataDelegate(string authorName)
+        int memberID { get; }
+
+        public FindBooksByAuthorDataDelegate(string authorName, int mem)
             : base("Libraries.FindBooksByAuthor")
         {
             AuthorName = authorName;
+            memberID = mem;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -26,6 +29,9 @@ namespace Library_Manager.DataDelegates
 
             var p = command.Parameters.Add("AuthorNamePattern", SqlDbType.NVarChar);
             p.Value = AuthorName;
+
+            p = command.Parameters.Add("MemberID", SqlDbType.Int);
+            p.Value = memberID;
         }
 
         public override List<Title> Translate(SqlCommand command, SqlDataReader reader)

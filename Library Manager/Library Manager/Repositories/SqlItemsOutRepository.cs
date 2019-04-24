@@ -26,9 +26,9 @@ namespace Library_Manager.Repositories
             return executor.ExecuteReader(d); 
         }
 
-        public void UpdateReturnDate(int ItemOutId)
+        public void UpdateReturnDate(int titleId)
         {
-            var d = new ReturnBookDataDelegate(ItemOutId);
+            var d = new ReturnBookDataDelegate(titleId);
             executor.ExecuteNonQuery(d);
         }
     }

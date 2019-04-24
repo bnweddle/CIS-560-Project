@@ -10,4 +10,3 @@ FROM Libraries.ItemsOut I
 	INNER JOIN Libraries.Title T ON T.TitleID = b.TitleID
 WHERE I.ReturnedDate IS NULL
 
-
