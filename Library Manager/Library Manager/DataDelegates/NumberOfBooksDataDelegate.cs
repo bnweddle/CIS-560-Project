@@ -6,27 +6,25 @@ using System.Collections.Generic;
 
 namespace Library_Manager.DataDelegates
 {
-    internal class NumberOfBooksDataDelegate : DataReaderDelegate<IReadOnlyDictionary<int, string>>
+    internal class NumberOfBooksDataDelegate : DataReaderDelegate<IReadOnlyList<BookQuantity>>
 	{
         public NumberOfBooksDataDelegate() : base("Libraries.ReportNumberOfBooks")
         {
         }
 
-        public override IReadOnlyDictionary<int, string> Translate(SqlCommand command, SqlDataReader reader)
+        public override IReadOnlyList<BookQuantity> Translate(SqlCommand command, SqlDataReader reader)
         {
-            int quantity;
-            string NameofBooks;
-
-            var dict = new Dictionary<int, string>();
+            List<BookQuantity> bq = new List<BookQuantity>();
 
             while(reader.Read())
             {
-                quantity = reader.GetInt32(reader.GetOrdinal("Quantity"));
-                NameofBooks = reader.GetString(reader.GetOrdinal("T.[Name]"));
-
-                dict.Add(quantity, NameofBooks);
+                bq.Add(new BookQuantity(
+                    reader.GetString(reader.GetOrdinal("LibraryName")),
+                    reader.GetString(reader.GetOrdinal("TitleName")),
+                    reader.GetInt32(reader.GetOrdinal("Quantity")),
+                    reader.GetInt32(reader.GetOrdinal("TotalNumOfBooks"))));
             }
-            return dict;
+            return bq;
         }
 	}
 }

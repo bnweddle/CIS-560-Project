@@ -34,7 +34,7 @@ namespace Library_Manager
             }
             else if(index == 2)
             {
-                MessageBox.Show("Uncomplete");
+                DisplayQuantity(bindingList);
             }
             else
             {
@@ -77,6 +77,18 @@ namespace Library_Manager
             foreach (OverDue o in due)
             {
                 binding.Add(o);
+            }
+        }
+
+        public void DisplayQuantity(IBindingList binding)
+        {
+            binding.Clear();
+            IReadOnlyList<BookQuantity> quantity = SqlTitle.NumberOfBooks();
+            uxbindingList.DataSource = binding;
+            uxDataView.DataSource = uxbindingList;
+            foreach (BookQuantity bq in quantity)
+            {
+                binding.Add(bq);
             }
         }
     }

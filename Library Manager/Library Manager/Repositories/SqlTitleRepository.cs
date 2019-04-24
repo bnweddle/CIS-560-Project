@@ -30,7 +30,7 @@ namespace Library_Manager.Repositories
             return executor.ExecuteReader(d);
         }
 
-        public IReadOnlyDictionary<int, string> NumberOfBooks()
+        public IReadOnlyList<BookQuantity> NumberOfBooks()
         {
             var d = new NumberOfBooksDataDelegate();
             return executor.ExecuteReader(d);

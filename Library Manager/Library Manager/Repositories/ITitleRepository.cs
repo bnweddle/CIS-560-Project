@@ -11,8 +11,8 @@ namespace Library_Manager.Repositories
     {
         List<Title> FindBooksByTitle(string titleName, int memberId); 
 
-        IReadOnlyList<Popular> MostPopularBooks(); //NumOfChecks, NameOfBook
+        IReadOnlyList<Popular> MostPopularBooks();
 
-        IReadOnlyDictionary<int, string> NumberOfBooks(); //Quantity, NameOfBook
+        IReadOnlyList<BookQuantity> NumberOfBooks(); 
     }
 }

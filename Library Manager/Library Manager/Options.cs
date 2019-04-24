@@ -16,6 +16,7 @@ namespace Library_Manager
         public BindingList<Author> authors;
         public BindingList<Popular> popular;
         public BindingList<OverDue> overdue;
+        public BindingList<BookQuantity> quantity;
         public Member member;
         public Options(Member m)
         {
@@ -23,6 +24,7 @@ namespace Library_Manager
             authors = new BindingList<Author>();
             popular = new BindingList<Popular>();
             overdue = new BindingList<OverDue>();
+            quantity = new BindingList<BookQuantity>();
             InitializeComponent();
         }
 
@@ -52,7 +54,8 @@ namespace Library_Manager
             //Number of books in all
             else if (uxReportQueries.SelectedIndex == 2)
             {
-
+                var reports = new Reports(2, quantity, member);
+                reports.Show();
             }
             //Overdue Books past a Month
             else if (uxReportQueries.SelectedIndex == 3)

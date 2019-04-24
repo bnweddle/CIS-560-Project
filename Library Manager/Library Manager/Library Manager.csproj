@@ -75,6 +75,7 @@
     <Compile Include="DataDelegates\Top10AuthorsDataDelegate.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookQuantity.cs" />
     <Compile Include="Models\ItemsOut.cs" />
     <Compile Include="Models\Library2.cs" />
     <Compile Include="Models\Member.cs" />

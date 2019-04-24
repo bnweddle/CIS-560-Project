@@ -1,7 +1,7 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.ReportNumberOfBooks
 AS
 
-SELECT L.[Name], T.[Name], B.Quantity,
+SELECT L.[Name] AS LibraryName, T.[Name] AS TitleName, B.Quantity,
 	SUM(B.Quantity) OVER(PARTITION BY T.TitleID) TotalNumOfBooks
 FROM Libraries.Book B
 	INNER JOIN Libraries.Library L ON L.LibraryID = B.LibraryID
