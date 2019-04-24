@@ -41,11 +41,11 @@
             this.uxSearchButton = new System.Windows.Forms.Button();
             this.uxReportButton = new System.Windows.Forms.Button();
             this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
+            this.titleIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSBNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publicationYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +55,11 @@
             this.uxDataView.AutoGenerateColumns = false;
             this.uxDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uxDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.titleIDDataGridViewTextBoxColumn,
             this.authorIDDataGridViewTextBoxColumn,
-            this.FirstName,
-            this.LastName,
-            this.MiddleName,
-            this.FullName});
+            this.iSBNDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.publicationYearDataGridViewTextBoxColumn});
             this.uxDataView.DataSource = this.uxBindingList;
             this.uxDataView.Location = new System.Drawing.Point(431, 70);
             this.uxDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -176,8 +176,15 @@
             // 
             // uxBindingList
             // 
-            this.uxBindingList.DataMember = "authorBindingList";
+            this.uxBindingList.DataMember = "titleBindingList";
             this.uxBindingList.DataSource = typeof(Library_Manager.Account);
+            // 
+            // titleIDDataGridViewTextBoxColumn
+            // 
+            this.titleIDDataGridViewTextBoxColumn.DataPropertyName = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn.HeaderText = "TitleID";
+            this.titleIDDataGridViewTextBoxColumn.Name = "titleIDDataGridViewTextBoxColumn";
+            this.titleIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // authorIDDataGridViewTextBoxColumn
             // 
@@ -186,33 +193,26 @@
             this.authorIDDataGridViewTextBoxColumn.Name = "authorIDDataGridViewTextBoxColumn";
             this.authorIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // FirstName
+            // iSBNDataGridViewTextBoxColumn
             // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
+            this.iSBNDataGridViewTextBoxColumn.DataPropertyName = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNDataGridViewTextBoxColumn.Name = "iSBNDataGridViewTextBoxColumn";
+            this.iSBNDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // LastName
+            // nameDataGridViewTextBoxColumn
             // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // MiddleName
+            // publicationYearDataGridViewTextBoxColumn
             // 
-            this.MiddleName.DataPropertyName = "MiddleName";
-            this.MiddleName.HeaderText = "MiddleName";
-            this.MiddleName.Name = "MiddleName";
-            this.MiddleName.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "FullName";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
+            this.publicationYearDataGridViewTextBoxColumn.DataPropertyName = "PublicationYear";
+            this.publicationYearDataGridViewTextBoxColumn.HeaderText = "PublicationYear";
+            this.publicationYearDataGridViewTextBoxColumn.Name = "publicationYearDataGridViewTextBoxColumn";
+            this.publicationYearDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Account
             // 
@@ -255,10 +255,10 @@
         private System.Windows.Forms.Button uxSearchButton;
         private System.Windows.Forms.Button uxReportButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn lengthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn authorIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn publicationYearDataGridViewTextBoxColumn;
     }
 }
