@@ -9,6 +9,12 @@ For this script to work, you must have created already created the database
 If you haven't created the database, you will get the following error:
 
 	Cannot open database "DatabaseNameHere" requested by the login.
+
+Also, you must open this file from file explorer. 
+Opening the file from Visual Studio's Solution Explorer will result in the following error:
+
+	Could not load file or assembly 'Microsoft.SqlServer.BatchParser
+
 #>
 
 Param(
