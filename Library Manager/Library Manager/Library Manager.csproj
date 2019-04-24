@@ -77,12 +77,6 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\ItemsOut.cs" />
     <Compile Include="Models\Library2.cs" />
-    <Compile Include="Account.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Account.Designer.cs">
-      <DependentUpon>Account.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\OverDue.cs" />
     <Compile Include="Models\Popular.cs" />
@@ -126,9 +120,6 @@
     <Compile Include="SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Account.resx">
-      <DependentUpon>Account.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CheckedOutBooks.resx">
       <DependentUpon>CheckedOutBooks.cs</DependentUpon>
     </EmbeddedResource>
