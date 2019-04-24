@@ -30,7 +30,7 @@ namespace Library_Manager.DataDelegates
             p = command.Parameters.Add("MemberID", SqlDbType.Int);
             p.Value = MemberID;
 
-            p = command.Parameters.Add("BookID", SqlDbType.Int);
+            p = command.Parameters.Add("TitleID", SqlDbType.Int);
             p.Value = BookID;
 
             p = command.Parameters.Add("Title", SqlDbType.NVarChar);

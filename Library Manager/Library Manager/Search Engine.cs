@@ -57,5 +57,22 @@ namespace Library_Manager
             }
 
         }
+
+        private void uxCheckOutButton_Click(object sender, EventArgs e)
+        {
+            int bookId = Convert.ToInt32(uxTitleID.Text);
+            int memberId = Convert.ToInt32(uxMemberID.Text);
+            int libraryId = Convert.ToInt32(uxLibraryID.Text);
+            ItemsOut I = SqlItemsOut.CreateCheckOut(bookId, memberId, libraryId);
+        }
+
+        private void uxDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                uxCheckOutButton.Enabled = true;
+                DataGridViewRow rows = this.uxDataView.Rows[e.RowIndex];
+                uxLibraryID.Text = member.LibraryID.ToString();
+                uxMemberID.Text = member.MemberID.ToString();
+                uxTitleID.Text = rows.Cells["TitleID"].Value.ToString();
+        }
     }
 }

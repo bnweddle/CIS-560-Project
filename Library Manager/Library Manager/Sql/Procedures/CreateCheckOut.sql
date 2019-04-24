@@ -4,10 +4,16 @@
    @DueBackDate DATETIME OUTPUT,
    @ReturnedDate DATETIME OUTPUT,
    @Title NVARCHAR(265) OUTPUT,
-   @BookID INT,
+   @TitleID INT,
    @MemberID INT,
    @LibraryID INT
 AS
+
+DECLARE @BookID INT = (
+	SELECT B.BookID
+	FROM Libraries.Book B
+	WHERE B.TitleID = @TitleID
+		AND B.LibraryID = @LibraryID)
 
 INSERT Libraries.ItemsOut(BookID, MemberID, LibraryID, CheckedOutDate, DueBackDate, ReturnedDate)
 VALUES(@BookID, @MemberID, @LibraryID, @CheckedOutDate, @DueBackDate, @ReturnedDate)
