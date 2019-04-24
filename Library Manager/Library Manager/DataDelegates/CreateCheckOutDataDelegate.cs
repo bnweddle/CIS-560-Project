@@ -33,7 +33,7 @@ namespace Library_Manager.DataDelegates
             p = command.Parameters.Add("TitleID", SqlDbType.Int);
             p.Value = BookID;
 
-            p = command.Parameters.Add("Title", SqlDbType.NVarChar);
+            p = command.Parameters.Add("Title", SqlDbType.NVarChar,(265));
             p.Direction = ParameterDirection.Output;
 
             p = command.Parameters.Add("ItemsOutID", SqlDbType.Int);
@@ -57,7 +57,7 @@ namespace Library_Manager.DataDelegates
                 (string)command.Parameters["Title"].Value,
                 (DateTime)command.Parameters["CheckedOutDate"].Value, 
                 (DateTime)command.Parameters["DueBackDate"].Value, 
-                (DateTime)command.Parameters["ReturnedDate"].Value);
+                (DateTime?)null);
         }
     }
 }

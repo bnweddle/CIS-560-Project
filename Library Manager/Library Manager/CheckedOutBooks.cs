@@ -17,7 +17,7 @@ namespace Library_Manager
         const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
         SqlItemsOutRepository SqlItemsOut = new SqlItemsOutRepository(connectionString);
         public BindingList<ItemsOut> itemsBindingList { get;  }
-        Member member;
+        Member member { get; set; }
 
         public CheckedOutBooks(Member m)
         {
@@ -29,6 +29,7 @@ namespace Library_Manager
 
         public void DisplayCheckedOutBooks(Member m)
         {
+            uxDataView.Refresh();
             itemsBindingList.Clear();
             uxBindingList.DataSource = itemsBindingList;
             uxDataView.DataSource = uxBindingList;
