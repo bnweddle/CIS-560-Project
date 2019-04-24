@@ -3,9 +3,17 @@
 # Update-Module sqlserver
 # Import-Module sqlserver
 
+<#
+
+For this script to work, you must have created already created the database
+If you haven't created the database, you will get the following error:
+
+	Cannot open database "DatabaseNameHere" requested by the login.
+#>
+
 Param(
    [string] $Server = "(localdb)\MSSQLLocalDb",
-   [string] $Database = "master"
+   [string] $Database = "LocalDB"
 )
 
 # This script requires the SQL Server module for PowerShell.
@@ -31,27 +39,26 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Sch
 
 # Tables
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Library.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Members.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Member.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Author.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Title.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Book.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\ItemsOut.sql"
 
-
 # Stored Procedures
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.CreateCheckOut.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.CreateMember.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.FindBooksByTitle.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.FindBooksByAuthor.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.GetMemberByEmail.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.GetTitleByLibrary.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.ReportMostPopularBooks.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.ReportNumberOfBooks.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.ReportOverDueBooks.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.ReportTopTenAuthors.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.RetrieveCheckedOutBooksForMember.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.RetrieveLibraryByName.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\Person.UpdateReturnDate.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\CreateCheckOut.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\CreateMember.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\FindBooksByTitle.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\FindBooksByAuthor.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\GetMemberByEmail.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\GetTitleByLibraryID.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportMostPopularBooks.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportNumberOfBooks.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportOverDueBooks.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportTopTenAuthors.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\RetrieveCheckedOutBooksForMember.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\RetrieveLibraryByName.sql"
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\UpdateReturnDate.sql"
 
 # Data
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Data\TempBooks.sql"
