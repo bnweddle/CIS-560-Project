@@ -17,7 +17,7 @@ namespace Library_Manager
         const string connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=LibraryDB;Integrated Security=SSPI;";
         SqlItemsOutRepository SqlItemsOut = new SqlItemsOutRepository(connectionString);
         public BindingList<ItemsOut> itemsBindingList { get;  }
-        Member member { get; set; }
+        Member member { get; }
 
         public CheckedOutBooks(Member m)
         {
@@ -59,7 +59,8 @@ namespace Library_Manager
         {
             int itemsId = Convert.ToInt32(uxTitleID.Text);
             SqlItemsOut.UpdateReturnDate(itemsId);
-            uxDataView.Refresh();
+            MessageBox.Show("Book was returned");
+            DisplayCheckedOutBooks(member);
         }
     }
 }

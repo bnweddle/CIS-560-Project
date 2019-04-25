@@ -64,7 +64,7 @@ namespace Library_Manager
             int memberId = Convert.ToInt32(uxMemberID.Text);
             int libraryId = Convert.ToInt32(uxLibraryID.Text);
             ItemsOut I = SqlItemsOut.CreateCheckOut(bookId, memberId, libraryId);
-            uxDataView.Refresh();
+            MessageBox.Show(bookId + " was checked out");
         }
 
         private void uxDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
