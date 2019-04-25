@@ -2,13 +2,11 @@
 	@TitleNamePattern NVARCHAR(265),
 	@MemberID INT
 AS
-SELECT DISTINCT T.TitleID, T.ISBN, T.[Name], T.AuthorID, T.PublicationYear
-FROM Libraries.Title T
-	INNER JOIN Libraries.Book B ON B.TitleID = T.TitleID
+SELECT DISTINCT T.TitleID, T.ISBN, T.[Name], T.PublicationYear, T.AuthorID
+FROM Libraries.Book B
+	INNER JOIN Libraries.Title T ON T.TitleID = B.TitleID
+		AND T.[Name] LIKE '%' + @TitleNamePattern + '%'
 	INNER JOIN Libraries.ItemsOut I ON I.BookID = B.BookID
 		AND I.ReturnedDate IS NOT NULL
-		AND I.LibraryID = B.LibraryID
-		AND B.Quantity > 0
 	INNER JOIN Libraries.Member M ON M.LibraryID = B.LibraryID
 		AND M.MemberID = @MemberID
-WHERE T.[Name] LIKE '%' + @TitleNamePattern + '%'
