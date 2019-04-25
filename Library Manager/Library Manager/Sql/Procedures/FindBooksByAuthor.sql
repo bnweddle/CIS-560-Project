@@ -3,7 +3,7 @@
 	@MemberID INT
 AS
 
-SELECT DISTINCT T.TitleID, T.ISBN, T.[Name], A.FullName, T.PublicationYear, T.AuthorID
+SELECT T.TitleID, T.ISBN, T.[Name], A.FullName, T.PublicationYear, T.AuthorID
 FROM Libraries.Book B
 	INNER JOIN Libraries.Title T ON T.TitleID = B.TitleID
 	INNER JOIN Libraries.Author A ON A.AuthorID = T.AuthorID
