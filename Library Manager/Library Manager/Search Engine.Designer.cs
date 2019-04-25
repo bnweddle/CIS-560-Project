@@ -37,9 +37,6 @@
             this.uxDataView = new System.Windows.Forms.DataGridView();
             this.uxCheckOutButton = new System.Windows.Forms.Button();
             this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
-            this.uxTitleID = new System.Windows.Forms.TextBox();
-            this.uxLibraryID = new System.Windows.Forms.TextBox();
-            this.uxMemberID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -108,8 +105,7 @@
             // 
             // uxCheckOutButton
             // 
-            this.uxCheckOutButton.Enabled = false;
-            this.uxCheckOutButton.Location = new System.Drawing.Point(814, 440);
+            this.uxCheckOutButton.Location = new System.Drawing.Point(622, 487);
             this.uxCheckOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxCheckOutButton.Name = "uxCheckOutButton";
             this.uxCheckOutButton.Size = new System.Drawing.Size(147, 34);
@@ -123,35 +119,11 @@
             this.uxBindingList.DataMember = "titleBindingList";
             this.uxBindingList.DataSource = typeof(Library_Manager.Search_Engine);
             // 
-            // uxTitleID
-            // 
-            this.uxTitleID.Location = new System.Drawing.Point(814, 314);
-            this.uxTitleID.Name = "uxTitleID";
-            this.uxTitleID.Size = new System.Drawing.Size(147, 22);
-            this.uxTitleID.TabIndex = 20;
-            // 
-            // uxLibraryID
-            // 
-            this.uxLibraryID.Location = new System.Drawing.Point(814, 360);
-            this.uxLibraryID.Name = "uxLibraryID";
-            this.uxLibraryID.Size = new System.Drawing.Size(147, 22);
-            this.uxLibraryID.TabIndex = 21;
-            // 
-            // uxMemberID
-            // 
-            this.uxMemberID.Location = new System.Drawing.Point(814, 402);
-            this.uxMemberID.Name = "uxMemberID";
-            this.uxMemberID.Size = new System.Drawing.Size(147, 22);
-            this.uxMemberID.TabIndex = 22;
-            // 
             // Search_Engine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 532);
-            this.Controls.Add(this.uxMemberID);
-            this.Controls.Add(this.uxLibraryID);
-            this.Controls.Add(this.uxTitleID);
+            this.ClientSize = new System.Drawing.Size(785, 532);
             this.Controls.Add(this.uxCheckOutButton);
             this.Controls.Add(this.uxSearchButton);
             this.Controls.Add(this.uxByTitle);
@@ -178,8 +150,5 @@
         private System.Windows.Forms.DataGridView uxDataView;
         private System.Windows.Forms.BindingSource uxBindingList;
         private System.Windows.Forms.Button uxCheckOutButton;
-        private System.Windows.Forms.TextBox uxTitleID;
-        private System.Windows.Forms.TextBox uxLibraryID;
-        private System.Windows.Forms.TextBox uxMemberID;
     }
 }

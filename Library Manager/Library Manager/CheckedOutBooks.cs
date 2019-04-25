@@ -25,6 +25,7 @@ namespace Library_Manager
             itemsBindingList = new BindingList<ItemsOut>();
             InitializeComponent();
             DisplayCheckedOutBooks(m);
+            uxReturnButton.Enabled = true;
         }
 
         public void DisplayCheckedOutBooks(Member m)
@@ -50,16 +51,14 @@ namespace Library_Manager
 
         private void uxDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            uxReturnButton.Enabled = true;
-            DataGridViewRow rows = this.uxDataView.Rows[e.RowIndex];
-            uxTitleID.Text = rows.Cells["ItemsOutID"].Value.ToString();
+            /*Ignore this*/
         }
 
         private void uxReturnButton_Click(object sender, EventArgs e)
         {
-            int itemsId = Convert.ToInt32(uxTitleID.Text);
-            SqlItemsOut.UpdateReturnDate(itemsId);
-            MessageBox.Show("Book was returned");
+            ItemsOut item = (ItemsOut)uxDataView.SelectedRows[0].DataBoundItem;
+            SqlItemsOut.UpdateReturnDate(item.ItemsOutID);
+            MessageBox.Show(item.Title + " was returned");
             DisplayCheckedOutBooks(member);
         }
     }

@@ -32,7 +32,6 @@
             this.uxReturnButton = new System.Windows.Forms.Button();
             this.uxDataView = new System.Windows.Forms.DataGridView();
             this.uxBindingList = new System.Windows.Forms.BindingSource(this.components);
-            this.uxTitleID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).BeginInit();
             this.SuspendLayout();
@@ -63,19 +62,11 @@
             // 
             this.uxBindingList.DataSource = typeof(Library_Manager.CheckedOutBooks);
             // 
-            // uxTitleID
-            // 
-            this.uxTitleID.Location = new System.Drawing.Point(496, 395);
-            this.uxTitleID.Name = "uxTitleID";
-            this.uxTitleID.Size = new System.Drawing.Size(111, 22);
-            this.uxTitleID.TabIndex = 22;
-            // 
             // CheckedOutBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.uxTitleID);
             this.Controls.Add(this.uxReturnButton);
             this.Controls.Add(this.uxDataView);
             this.Name = "CheckedOutBooks";
@@ -83,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.uxDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uxBindingList)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -92,6 +82,5 @@
         private System.Windows.Forms.Button uxReturnButton;
         private System.Windows.Forms.DataGridView uxDataView;
         private System.Windows.Forms.BindingSource uxBindingList;
-        private System.Windows.Forms.TextBox uxTitleID;
     }
 }
