@@ -13,7 +13,8 @@ DECLARE @BookID INT = (
 	SELECT B.BookID
 	FROM Libraries.Book B
 	WHERE B.TitleID = @TitleID
-		AND B.LibraryID = @LibraryID)
+		AND B.LibraryID = @LibraryID
+)
 
 INSERT Libraries.ItemsOut(BookID, MemberID, LibraryID, CheckedOutDate, DueBackDate, ReturnedDate)
 VALUES(@BookID, @MemberID, @LibraryID,  SYSDATETIMEOFFSET(), DATEADD(DAY, 21, SYSDATETIMEOFFSET()), @ReturnedDate)

@@ -29,7 +29,6 @@ namespace Library_Manager
 
         public void DisplayCheckedOutBooks(Member m)
         {
-            uxDataView.Refresh();
             itemsBindingList.Clear();
             uxBindingList.DataSource = itemsBindingList;
             uxDataView.DataSource = uxBindingList;
