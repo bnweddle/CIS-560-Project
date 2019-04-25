@@ -192,7 +192,6 @@
     <Content Include="Sql\Procedures\FindBooksByAuthor.sql" />
     <Content Include="Sql\Procedures\FindBooksByTitle.sql" />
     <Content Include="Sql\Procedures\GetMemberByEmail.sql" />
-    <Content Include="Sql\Procedures\GetTitleByLibraryID.sql" />
     <Content Include="Sql\Procedures\ReportNumberOfBooks.sql" />
     <Content Include="Sql\Procedures\RetrieveCheckedOutBooksForMember.sql" />
     <Content Include="Sql\Procedures\RetrieveLibraryByName.sql" />

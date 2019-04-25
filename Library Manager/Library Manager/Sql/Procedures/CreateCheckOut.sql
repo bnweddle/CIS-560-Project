@@ -17,7 +17,7 @@ DECLARE @BookID INT = (
 )
 
 INSERT Libraries.ItemsOut(BookID, MemberID, LibraryID, CheckedOutDate, DueBackDate, ReturnedDate)
-VALUES(@BookID, @MemberID, @LibraryID,  SYSDATETIMEOFFSET(), DATEADD(DAY, 21, SYSDATETIMEOFFSET()), @ReturnedDate)
+VALUES(@BookID, @MemberID, @LibraryID,  SYSDATETIMEOFFSET(), DATEADD(DAY, 21, SYSDATETIMEOFFSET()), NULL)
 
 SET @ItemsOutID = SCOPE_IDENTITY();
 SET @CheckedOutDate = SYSDATETIMEOFFSET();
