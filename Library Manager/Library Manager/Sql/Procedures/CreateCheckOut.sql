@@ -1,4 +1,5 @@
-﻿CREATE OR ALTER PROCEDURE Libraries.CreateCheckOut
+﻿/*Member checks out a specific book(s) from specific library and assigns the dates default values*/
+CREATE OR ALTER PROCEDURE Libraries.CreateCheckOut
    @ItemsOutID INT OUTPUT,
    @CheckedOutDate DATETIME OUTPUT,
    @DueBackDate DATETIME OUTPUT,
@@ -31,4 +32,3 @@ SET @Title =  (
 				 INNER JOIN Libraries.ItemsOut I ON I.BookID = B.BookID
 					AND I.ItemsOutID = @ItemsOutID)
 
-/*Member checks out a specific book(s) from specific library */

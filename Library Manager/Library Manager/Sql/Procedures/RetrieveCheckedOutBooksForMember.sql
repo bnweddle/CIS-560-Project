@@ -1,4 +1,6 @@
-﻿CREATE OR ALTER PROCEDURE Libraries.CheckedOutBooksForMember
+﻿/*Returns the list of books the specific member has currently checked out (not returned) and 
+ gives all inforamtion connected with each book*/
+CREATE OR ALTER PROCEDURE Libraries.CheckedOutBooksForMember
 	@MemberID INT
 AS
 

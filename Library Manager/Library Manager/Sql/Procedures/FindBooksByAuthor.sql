@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Libraries.FindBooksByAuthor
+﻿/*Returns many or a few books based on the entry the user gives and searches through all 
+possible authors where there are still available books for the user to check out by 
+comparing the Num of CheckedOut books with the Quantity the specific library holds*/
+CREATE OR ALTER PROCEDURE Libraries.FindBooksByAuthor
 	@AuthorNamePattern NVARCHAR(255),
 	@LibraryID INT
 AS

@@ -12,6 +12,8 @@ FROM Libraries.Title t
 		AND @MemberID = m.MemberID
 GROUP BY a.FirstName, a.LastName, a.MiddleName, a.FullName, a.AuthorID
 ORDER BY COUNT(*) DESC, a.FirstName desc, a.LastName desc, a.MiddleName desc,
-	a.FullName desc, a.AuthorID desc
-
---soz ripped this from reportmostpopularbooks
+	a.FullName desc, a.AuthorID DESC
+    
+--REPORT QUERY
+--Should return the top ten authors for the specific memeber's library 
+--Decides the top ten by comparing the num of times a book has been checked out 

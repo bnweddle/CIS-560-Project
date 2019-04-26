@@ -1,4 +1,7 @@
-﻿CREATE OR ALTER PROCEDURE Libraries.FindBooksByTitle
+﻿/*returns many or a few books based on the entry the user gives and searches through all 
+possible titles where there are still available books for the user to check out by 
+comparing the Num of CheckedOut books with the Quantity the specific library holds*/ 
+CREATE OR ALTER PROCEDURE Libraries.FindBooksByTitle
 	@TitleNamePattern NVARCHAR(265),
 	@LibraryID INT
 AS
