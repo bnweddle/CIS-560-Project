@@ -199,6 +199,7 @@
     <Content Include="Sql\Procedures\ReportOverDueBooks.sql" />
     <Content Include="Sql\Procedures\ReportTopTenAuthors.sql" />
     <Content Include="Sql\Procedures\UpdateReturnDate.sql" />
+    <Content Include="Sql\Tables\Database.sql" />
     <Content Include="Sql\Tables\Author.sql" />
     <Content Include="Sql\Tables\Book.sql" />
     <Content Include="Sql\Tables\DropTables.sql" />
