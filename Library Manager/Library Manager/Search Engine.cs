@@ -27,6 +27,7 @@ namespace Library_Manager
         private void uxSearchButton_Click(object sender, EventArgs e)
         {
             titleBindingList.Clear();
+            this.uxDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             uxBindingList.DataSource = titleBindingList;
             uxDataView.DataSource = uxBindingList;
             List<Title> list = new List<Title>();
@@ -35,7 +36,7 @@ namespace Library_Manager
             if (uxByTitle.Checked == true)
             {
 
-                list = SqlTitle.FindBooksByTitle(search, member.MemberID);
+                list = SqlTitle.FindBooksByTitle(search, member.LibraryID);
 
                 foreach (Title t in list)
                 {
@@ -45,7 +46,7 @@ namespace Library_Manager
             }
             else if (uxByAuthor.Checked == true)
             {
-                list = SqlAuthor.FindBooksByAuthor(search, member.MemberID);
+                list = SqlAuthor.FindBooksByAuthor(search, member.LibraryID);
                 foreach (Title t in list)
                 {
                     titleBindingList.Add(t);
@@ -60,10 +61,24 @@ namespace Library_Manager
 
         private void uxCheckOutButton_Click(object sender, EventArgs e)
         {
+            
             Title title = (Title) uxDataView.SelectedRows[0].DataBoundItem;
-            ItemsOut I = SqlItemsOut.CreateCheckOut(title.TitleID, member.MemberID, member.LibraryID);
-            titleBindingList.Remove(title);
-            MessageBox.Show(title.Name + " was checked out");
+            if(title.Avail == 0)
+            {
+                MessageBox.Show(title.Name + " is not available currently");
+            }
+            else
+            {
+                ItemsOut I = SqlItemsOut.CreateCheckOut(title.TitleID, member.MemberID, member.LibraryID);
+                uxSearchButton_Click(sender, e);
+                if (title.Avail == 1)
+                {
+                    titleBindingList.Remove(title);
+                }
+
+                MessageBox.Show(title.Name + " was checked out");
+            }
+           
         }
 
         private void uxDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)

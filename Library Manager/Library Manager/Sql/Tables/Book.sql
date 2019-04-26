@@ -6,5 +6,5 @@
 	Quantity INT NOT NULL,
 
 	UNIQUE(LibraryID, BookID),
-	UNIQUE(LibraryID,TitleID)
+	UNIQUE(LibraryID,TitleID),
 )

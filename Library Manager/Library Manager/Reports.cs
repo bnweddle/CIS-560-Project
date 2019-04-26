@@ -24,7 +24,8 @@ namespace Library_Manager
         {
             m = member;
             InitializeComponent();
-            if(index == 0)
+            this.uxDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            if (index == 0)
             {
                 DisplayTopBooks(bindingList);
             }

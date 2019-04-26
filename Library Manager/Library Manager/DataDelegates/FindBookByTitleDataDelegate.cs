@@ -24,7 +24,7 @@ namespace Library_Manager.DataDelegates
             var p = command.Parameters.Add("TitleNamePattern", SqlDbType.NVarChar);
             p.Value = TitleName;
 
-            p = command.Parameters.Add("MemberID", SqlDbType.Int);
+            p = command.Parameters.Add("LibraryID", SqlDbType.Int);
             p.Value = memberID;
         }
 
@@ -36,10 +36,11 @@ namespace Library_Manager.DataDelegates
             {
                 books.Add(new Title(
                     reader.GetInt32(reader.GetOrdinal("TitleID")),
-                    reader.GetInt32(reader.GetOrdinal("AuthorID")),
                     reader.GetString(reader.GetOrdinal("ISBN")),
+                    reader.GetString(reader.GetOrdinal("FullName")),
                     reader.GetString(reader.GetOrdinal("Name")),
-                    reader.GetInt32(reader.GetOrdinal("PublicationYear"))));
+                    reader.GetInt32(reader.GetOrdinal("Published")),
+                    reader.GetInt32(reader.GetOrdinal("Available"))));
             }
             return books;
         }

@@ -1,14 +1,14 @@
 ﻿CREATE OR ALTER PROCEDURE Libraries.FindBooksByAuthor
 	@AuthorNamePattern NVARCHAR(255),
-	@MemberID INT
+	@LibraryID INT
 AS
 
-SELECT T.TitleID, T.ISBN, T.[Name], A.FullName, T.PublicationYear, T.AuthorID
-FROM Libraries.Book B
-	INNER JOIN Libraries.Title T ON T.TitleID = B.TitleID
+SELECT COUNT(I.ItemsOutID) CheckedOut, B.Quantity - COUNT(I.ItemsOutID) AS Available,T.TitleID, A.FullName, T.ISBN, T.[Name], T.PublicationYear AS Published, B.Quantity
+FROM Libraries.Title T
 	INNER JOIN Libraries.Author A ON A.AuthorID = T.AuthorID
-		AND A.FullName LIKE '%' + @AuthorNamePattern + '%'
-	INNER JOIN Libraries.ItemsOut I ON I.BookID = B.BookID
-		AND I.ReturnedDate IS NOT NULL
-	INNER JOIN Libraries.Member M ON M.LibraryID = B.LibraryID
-		AND M.MemberID = @MemberID
+	INNER JOIN Libraries.Book B ON B.TitleID = T.TitleID
+	LEFT JOIN Libraries.ItemsOut I ON I.BookID = B.BookID
+		AND I.ReturnedDate IS NULL
+WHERE B.LibraryID = @LibraryID
+	AND A.FullName LIKE '%' + @AuthorNamePattern + '%'
+GROUP BY T.TitleID, A.FullName, T.ISBN, T.[Name], T.PublicationYear, B.Quantity

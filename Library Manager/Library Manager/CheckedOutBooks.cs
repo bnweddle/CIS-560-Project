@@ -34,8 +34,9 @@ namespace Library_Manager
             uxBindingList.DataSource = itemsBindingList;
             uxDataView.DataSource = uxBindingList;
             List<ItemsOut> values = SqlItemsOut.CheckedOutBooksForMember(m.MemberID);
+            AdjustColumnOrder();
 
-            if(values == null)
+            if (values == null)
             {
                 MessageBox.Show("No checked out books currently");
             }
@@ -47,6 +48,14 @@ namespace Library_Manager
                 }
             }
             
+        }
+
+        private void AdjustColumnOrder()
+        {
+            this.uxDataView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            uxDataView.Columns["MemberID"].Visible = false;
+            uxDataView.Columns["LibraryID"].Visible = false;
+            uxDataView.Columns["BookID"].Visible = false;
         }
 
         private void uxDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
