@@ -19,7 +19,7 @@ Opening the file from Visual Studio's Solution Explorer will result in the follo
 
 Param(
    [string] $Server = "(localdb)\MSSQLLocalDb",
-   [string] $Database = "LocalDB"
+   [string] $Database = "LibraryDB"
 )
 
 # This script requires the SQL Server module for PowerShell.
@@ -36,6 +36,11 @@ Param(
 
 Write-Host ""
 Write-Host "Rebuilding database $Database on $Server..."
+
+<#
+# Create Database 
+Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\Database.sql"
+#>
 
 # Drop Tables
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Tables\DropTables.sql"
@@ -57,7 +62,7 @@ Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\FindBooksByTitle.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\FindBooksByAuthor.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\GetMemberByEmail.sql"
-Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\GetTitleByLibraryID.sql"
+#Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\GetTitleByLibraryID.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportMostPopularBooks.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportNumberOfBooks.sql"
 Invoke-SqlCmd -ServerInstance $Server -Database $Database -InputFile "Procedures\ReportOverDueBooks.sql"
