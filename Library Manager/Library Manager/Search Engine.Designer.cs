@@ -44,7 +44,7 @@
             // 
             // uxSearchButton
             // 
-            this.uxSearchButton.Location = new System.Drawing.Point(317, 6);
+            this.uxSearchButton.Location = new System.Drawing.Point(344, 8);
             this.uxSearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.uxSearchButton.Name = "uxSearchButton";
             this.uxSearchButton.Size = new System.Drawing.Size(40, 25);
@@ -57,11 +57,12 @@
             // 
             this.uxByTitle.AutoSize = true;
             this.uxByTitle.BackColor = System.Drawing.Color.Transparent;
+            this.uxByTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxByTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.uxByTitle.Location = new System.Drawing.Point(16, 84);
             this.uxByTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxByTitle.Name = "uxByTitle";
-            this.uxByTitle.Size = new System.Drawing.Size(97, 21);
+            this.uxByTitle.Size = new System.Drawing.Size(107, 21);
             this.uxByTitle.TabIndex = 16;
             this.uxByTitle.TabStop = true;
             this.uxByTitle.Text = "Title Name";
@@ -71,11 +72,12 @@
             // 
             this.uxByAuthor.AutoSize = true;
             this.uxByAuthor.BackColor = System.Drawing.Color.Transparent;
+            this.uxByAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uxByAuthor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.uxByAuthor.Location = new System.Drawing.Point(16, 45);
             this.uxByAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxByAuthor.Name = "uxByAuthor";
-            this.uxByAuthor.Size = new System.Drawing.Size(112, 21);
+            this.uxByAuthor.Size = new System.Drawing.Size(123, 21);
             this.uxByAuthor.TabIndex = 15;
             this.uxByAuthor.TabStop = true;
             this.uxByAuthor.Text = "Author Name";
@@ -83,7 +85,7 @@
             // 
             // uxSearchBox
             // 
-            this.uxSearchBox.Location = new System.Drawing.Point(177, 6);
+            this.uxSearchBox.Location = new System.Drawing.Point(205, 9);
             this.uxSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxSearchBox.Name = "uxSearchBox";
             this.uxSearchBox.Size = new System.Drawing.Size(132, 22);
@@ -93,10 +95,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 17);
+            this.label1.Size = new System.Drawing.Size(187, 17);
             this.label1.TabIndex = 13;
             this.label1.Text = "Search Books in Library:";
             // 

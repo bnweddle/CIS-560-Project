@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.Location = new System.Drawing.Point(39, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 17);
@@ -57,7 +57,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label2.ForeColor = System.Drawing.Color.Green;
             this.label2.Location = new System.Drawing.Point(39, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
@@ -68,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label3.ForeColor = System.Drawing.Color.Green;
             this.label3.Location = new System.Drawing.Point(17, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 17);
@@ -79,7 +79,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label4.ForeColor = System.Drawing.Color.Green;
             this.label4.Location = new System.Drawing.Point(12, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 17);
@@ -90,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.label5.ForeColor = System.Drawing.Color.Green;
             this.label5.Location = new System.Drawing.Point(49, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 17);
