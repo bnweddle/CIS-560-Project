@@ -63,7 +63,7 @@ namespace Library_Manager
         {
             
             Title title = (Title) uxDataView.SelectedRows[0].DataBoundItem;
-            if(title.Avail == 0)
+            if(title.Available == 0)
             {
                 MessageBox.Show(title.Name + " is not available currently");
             }
@@ -71,7 +71,7 @@ namespace Library_Manager
             {
                 ItemsOut I = SqlItemsOut.CreateCheckOut(title.TitleID, member.MemberID, member.LibraryID);
                 uxSearchButton_Click(sender, e);
-                if (title.Avail == 1)
+                if (title.Available == 1)
                 {
                     titleBindingList.Remove(title);
                 }
