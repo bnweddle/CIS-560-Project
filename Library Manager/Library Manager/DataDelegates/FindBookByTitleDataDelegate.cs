@@ -46,6 +46,3 @@ namespace Library_Manager.DataDelegates
         }
     }
 }
-
-//It doesn't acknowledge Title (from Title.cs) and it doesn't acknowledge SqlCommand/Reader 
-//Also doesn't acknowledge DataReaderDelegate

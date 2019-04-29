@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library_Manager.Repositories;
-using System.Transactions;
 using Library_Manager.Models;
 
 namespace Library_Manager
@@ -39,8 +31,6 @@ namespace Library_Manager
 
             else
             {
-                /*var account = new Account(m);
-                account.Show();*/
                 var options = new Options(m);
                 options.Show();
             }
