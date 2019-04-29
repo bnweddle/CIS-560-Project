@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search_Engine));
             this.uxSearchButton = new System.Windows.Forms.Button();
             this.uxByTitle = new System.Windows.Forms.RadioButton();
             this.uxByAuthor = new System.Windows.Forms.RadioButton();
@@ -55,6 +56,8 @@
             // uxByTitle
             // 
             this.uxByTitle.AutoSize = true;
+            this.uxByTitle.BackColor = System.Drawing.Color.Transparent;
+            this.uxByTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.uxByTitle.Location = new System.Drawing.Point(16, 84);
             this.uxByTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxByTitle.Name = "uxByTitle";
@@ -62,11 +65,13 @@
             this.uxByTitle.TabIndex = 16;
             this.uxByTitle.TabStop = true;
             this.uxByTitle.Text = "Title Name";
-            this.uxByTitle.UseVisualStyleBackColor = true;
+            this.uxByTitle.UseVisualStyleBackColor = false;
             // 
             // uxByAuthor
             // 
             this.uxByAuthor.AutoSize = true;
+            this.uxByAuthor.BackColor = System.Drawing.Color.Transparent;
+            this.uxByAuthor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.uxByAuthor.Location = new System.Drawing.Point(16, 45);
             this.uxByAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uxByAuthor.Name = "uxByAuthor";
@@ -74,7 +79,7 @@
             this.uxByAuthor.TabIndex = 15;
             this.uxByAuthor.TabStop = true;
             this.uxByAuthor.Text = "Author Name";
-            this.uxByAuthor.UseVisualStyleBackColor = true;
+            this.uxByAuthor.UseVisualStyleBackColor = false;
             // 
             // uxSearchBox
             // 
@@ -87,6 +92,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 17);
@@ -123,6 +130,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(785, 532);
             this.Controls.Add(this.uxCheckOutButton);
             this.Controls.Add(this.uxSearchButton);

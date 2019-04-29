@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewMember));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label1.Location = new System.Drawing.Point(39, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 17);
@@ -53,6 +56,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label2.Location = new System.Drawing.Point(39, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 17);
@@ -62,6 +67,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label3.Location = new System.Drawing.Point(17, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 17);
@@ -71,6 +78,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label4.Location = new System.Drawing.Point(12, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 17);
@@ -80,6 +89,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.label5.Location = new System.Drawing.Point(49, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 17);
@@ -145,6 +156,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(410, 281);
             this.Controls.Add(this.uxSubmit);
             this.Controls.Add(this.uxPhoneText);
